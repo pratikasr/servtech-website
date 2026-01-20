@@ -6,8 +6,8 @@
     padding-bottom: var(--space-8);
     margin-top: 0;
     /* No white space */
-    border-top: 1px solid var(--gray-700);
-    /* Darker, more visible line */
+    border-top: 1px solid var(--gray-600);
+    /* Lighter, more visible line against dark bg */
 }
 
 .footerContent {

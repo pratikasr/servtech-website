@@ -54,7 +54,7 @@ export default function PortfolioPage() {
                 description="A showcase of our work delivering impact through innovation."
             />
 
-            <section className="section">
+            <section className="section" style={{ backgroundColor: 'var(--gray-50)' }}>
                 <div className="container">
                     <div className={styles.grid}>
                         {projects.map((project, index) => (

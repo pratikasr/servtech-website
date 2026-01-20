@@ -101,6 +101,14 @@
   --container-padding-desktop: 2rem;
   --container-padding-mobile: 1.25rem;
 
+  /* ===== Section Spacing ===== */
+  --section-y-mobile: var(--space-16);
+  /* 4rem */
+  --section-y-tablet: var(--space-20);
+  /* 5rem */
+  --section-y-desktop: var(--space-24);
+  /* 6rem */
+
   /* ===== Physics-based Animation ===== */
   --timing-fast: 200ms;
   --timing-base: 400ms;
@@ -159,6 +167,17 @@ body {
   position: relative;
   /* Ensure no residual gradients or shadows */
   background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* NUKE ALL GLOWS */
+body::before,
+body::after,
+html::before,
+html::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
   box-shadow: none !important;
 }
 
@@ -231,9 +250,9 @@ a:hover {
 }
 
 /* Fix: Buttons should keep white text on hover */
-a.button:hover,
-button:hover {
-  color: var(--white) !important;
+a.button:hover {
+  /* Only apply to link buttons if needed, but safer to remove broad button:hover */
+  transition: color var(--timing-fast);
 }
 
 a:focus-visible {

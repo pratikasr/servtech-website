@@ -55,7 +55,7 @@ export default function IndustriesPage() {
                 description="Tailored technology solutions for diverse sectors, driving efficiency and innovation."
             />
 
-            <section className="section">
+            <section className="section" style={{ backgroundColor: 'var(--gray-50)' }}>
                 <div className="container">
                     <div className={styles.grid}>
                         {industries.map((industry, index) => (

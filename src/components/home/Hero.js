@@ -2,7 +2,7 @@
 
 import Button from '../common/Button';
 import { ArrowRight } from 'lucide-react';
-import styles from './Hero.module.css';
+import styles from './HeroSection.module.css';
 
 export default function Hero() {
     const scrollToServices = () => {
