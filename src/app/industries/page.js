@@ -1,49 +1,55 @@
 import PageHeader from '@/components/common/PageHeader';
 import {
-    HeartPulse,
-    ShoppingBag,
-    GraduationCap,
-    Truck,
-    Film,
-    Leaf
+    Shield,
+    Network,
+    Cloud,
+    Database,
+    Layout,
+    Camera,
+    Monitor
 } from 'lucide-react';
 import styles from './page.module.css';
 
 export const metadata = {
-    title: 'Industries We Serve - Servtech',
-    description: 'Specialized IT solutions for Healthcare, Retail, Education, Transportation, Media, and Agriculture.',
+    title: 'Industries & Technologies - Servtech',
+    description: 'We specialize in Cybersecurity, Networking, Cloud Infrastructure, and Enterprise Software solutions.',
 };
 
 const industries = [
     {
-        title: "Healthcare",
-        description: "Innovative solutions for patient management, telemedicine, and medical data analysis to improve care delivery.",
-        icon: <HeartPulse size={40} />
+        title: "Cybersecurity",
+        description: "Advanced threat protection, zero-trust architecture, and comprehensive security audits.",
+        icon: <Shield size={40} />
     },
     {
-        title: "Retail & E-commerce",
-        description: "Seamless shopping experiences with robust e-commerce platforms, inventory management, and personalized marketing.",
-        icon: <ShoppingBag size={40} />
+        title: "Networking",
+        description: "High-performance network infrastructure, SD-WAN, and seamless connectivity solutions.",
+        icon: <Network size={40} />
     },
     {
-        title: "Education",
-        description: "Transforming learning with e-learning platforms, student management systems, and virtual classrooms.",
-        icon: <GraduationCap size={40} />
+        title: "Cloud & Infrastructure",
+        description: "Scalable cloud platforms, hybrid infrastructure, and orchestration for modern enterprises.",
+        icon: <Cloud size={40} />
     },
     {
-        title: "Transportation",
-        description: "Optimizing logistics with fleet management, route optimization, and real-time tracking solutions.",
-        icon: <Truck size={40} />
+        title: "Storage & Data",
+        description: "Resilient storage systems, data protection, and intelligent data management strategies.",
+        icon: <Database size={40} />
     },
     {
-        title: "Media & Entertainment",
-        description: "Engaging content delivery platforms, streaming services, and digital asset management.",
-        icon: <Film size={40} />
+        title: "Enterprise Software",
+        description: "Business process automation, ERP integration, and custom software solutions.",
+        icon: <Layout size={40} />
     },
     {
-        title: "Agriculture",
-        description: "Smart farming solutions using IoT and data analytics to improve crop yield and resource efficiency.",
-        icon: <Leaf size={40} />
+        title: "Physical Security",
+        description: "Smart surveillance, access control, and integrated physical security systems.",
+        icon: <Camera size={40} />
+    },
+    {
+        title: "Hardware & Devices",
+        description: "Premium hardware provisioning, IoT devices, and robust endpoint management.",
+        icon: <Monitor size={40} />
     }
 ];
 

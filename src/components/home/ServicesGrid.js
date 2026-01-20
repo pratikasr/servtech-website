@@ -1,43 +1,49 @@
 import Link from 'next/link';
-import { Cloud, Brain, Shield, Code, Building2, Settings } from 'lucide-react';
+import { Shield, Network, Cloud, Database, Layout, Camera, Monitor } from 'lucide-react';
 import styles from './ServicesGrid.module.css';
 
 const services = [
     {
-        icon: <Cloud size={24} />,  // Reduced from 40
-        title: 'Cloud Solutions',
-        description: 'Scalable infrastructure with AWS, Azure, and Google Cloud. Migration, optimization, and management.',
-        href: '/services/cloud-solutions',
-    },
-    {
-        icon: <Brain size={24} />,
-        title: 'AI & Machine Learning',
-        description: 'Intelligent automation, predictive analytics, and AI-powered insights for business transformation.',
-        href: '/services/ai-ml',
-    },
-    {
         icon: <Shield size={24} />,
         title: 'Cybersecurity',
-        description: 'Comprehensive security solutions including threat detection, DDoS protection, and compliance.',
+        description: 'Advanced threat protection, zero-trust architecture, and comprehensive security audits.',
         href: '/services/cybersecurity',
     },
     {
-        icon: <Code size={24} />,
-        title: 'Software Development',
-        description: 'Custom web and mobile applications built with modern technologies for optimal performance.',
-        href: '/services/software-development',
+        icon: <Network size={24} />,
+        title: 'Networking',
+        description: 'High-performance network infrastructure, SD-WAN, and seamless connectivity solutions.',
+        href: '/services/networking',
     },
     {
-        icon: <Building2 size={24} />,
-        title: 'Enterprise Solutions',
-        description: 'ERP implementation, e-learning platforms, and business process automation.',
-        href: '/services/enterprise-solutions',
+        icon: <Cloud size={24} />,
+        title: 'Cloud & Infrastructure',
+        description: 'Scalable cloud platforms, hybrid infrastructure, and orchestration for modern enterprises.',
+        href: '/services/cloud-infrastructure',
     },
     {
-        icon: <Settings size={24} />,
-        title: 'Managed Services',
-        description: '24/7 IT support, system monitoring, and infrastructure management.',
-        href: '/services/managed-services',
+        icon: <Database size={24} />,
+        title: 'Storage & Data',
+        description: 'Resilient storage systems, data protection, and intelligent data management strategies.',
+        href: '/services/storage-data',
+    },
+    {
+        icon: <Layout size={24} />,
+        title: 'Enterprise Software',
+        description: 'Business process automation, ERP integration, and custom software solutions.',
+        href: '/services/enterprise-software',
+    },
+    {
+        icon: <Camera size={24} />,
+        title: 'Physical Security',
+        description: 'Smart surveillance, access control, and integrated physical security systems.',
+        href: '/services/physical-security',
+    },
+    {
+        icon: <Monitor size={24} />,
+        title: 'Hardware & Devices',
+        description: 'Premium hardware provisioning, IoT devices, and robust endpoint management.',
+        href: '/services/hardware-devices',
     }
 ];
 
