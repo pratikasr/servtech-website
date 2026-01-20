@@ -1,12 +1,17 @@
 import styles from './FeaturedClients.module.css';
 
 const clients = [
-    { name: 'TechVentures India', industry: 'Technology' },
-    { name: 'RetailCorp', industry: 'E-Commerce' },
-    { name: 'FinSecure Solutions', industry: 'Finance' },
-    { name: 'HealthCare Plus', industry: 'Healthcare' },
-    { name: 'EduTech Systems', industry: 'Education' },
-    { name: 'Manufacturing Pro', industry: 'Manufacturing' }
+    { name: 'Microsoft', industry: 'Cloud & AI' },
+    { name: 'Cisco', industry: 'Networking' },
+    { name: 'AWS', industry: 'Cloud Infrastructure' },
+    { name: 'Fortinet', industry: 'Cybersecurity' },
+    { name: 'Palo Alto', industry: 'Network Security' },
+    { name: 'Dell EMC', industry: 'Storage & Server' },
+    { name: 'Oracle', industry: 'Enterprise Software' },
+    { name: 'VMware', industry: 'Virtualization' },
+    { name: 'Red Hat', industry: 'Open Source' },
+    { name: 'Juniper', industry: 'Networking' },
+    { name: 'Google Cloud', industry: 'Cloud Computing' }
 ];
 
 export default function FeaturedClients() {
@@ -14,9 +19,9 @@ export default function FeaturedClients() {
         <section className={`section ${styles.clients}`}>
             <div className="container">
                 <div className={styles.header}>
-                    <h2>Powering Innovation Across Industries</h2>
+                    <h2>Strategic Technology Partners</h2>
                     <p>
-                        From startups to enterprises, we partner with forward-thinking organizations
+                        We collaborate with global industry leaders to deliver world-class solutions.
                     </p>
                 </div>
             </div>
