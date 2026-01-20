@@ -1,3 +1,4 @@
+/* Industries Page - Distinct from Services */
 .grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -5,31 +6,37 @@
 }
 
 .industryCard {
-    background-color: var(--white);
+    background-color: var(--gray-50);
+    /* Darker than white */
     border-radius: var(--radius-2xl);
     overflow: hidden;
     position: relative;
-    border: 1px solid var(--gray-100);
+    border: 1px solid transparent;
     transition: all var(--timing-base) var(--ease-apple);
     display: flex;
     flex-direction: column;
+    padding: var(--space-8);
 }
 
 .industryCard:hover {
-    transform: translateY(-4px);
+    background-color: var(--white);
     box-shadow: var(--shadow-xl);
-    border-color: rgba(0, 113, 227, 0.3);
+    border-color: var(--gray-200);
+    transform: scale(1.02);
+    /* Slight zoom instead of lift */
 }
 
+/* Icon on the right side for differentiation */
 .cardContent {
-    padding: var(--space-10);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .cardTitle {
-    font-size: var(--text-2xl);
+    font-size: var(--text-3xl);
+    /* Larger headlines */
     font-weight: var(--font-semibold);
     margin-bottom: var(--space-3);
     color: var(--gray-900);
@@ -40,26 +47,29 @@
     color: var(--gray-500);
     line-height: var(--leading-relaxed);
     margin-bottom: 0;
-    font-size: var(--text-base);
+    font-size: var(--text-lg);
+    /* Larger text */
 }
 
 .cardIcon {
-    color: var(--accent-blue);
+    color: var(--gray-900);
     margin-bottom: var(--space-6);
-    background: var(--gray-50);
-    width: 4rem;
-    height: 4rem;
+    background: var(--white);
+    width: 4.5rem;
+    height: 4.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-xl);
-    transition: transform var(--timing-base) var(--ease-apple);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--timing-base) var(--ease-apple);
 }
 
 .industryCard:hover .cardIcon {
-    transform: scale(1.1);
     background: var(--accent-blue);
     color: var(--white);
+    transform: rotate(-5deg);
+    /* Playful interaction */
 }
 
 @media (min-width: 768px) {

@@ -6,39 +6,71 @@
 
 .serviceCard {
     background-color: var(--white);
-    padding: var(--space-8);
+    padding: var(--space-10);
+    /* More padding */
     border-radius: var(--radius-2xl);
-    border: 1px solid var(--gray-100);
+    border: 1px solid var(--gray-200);
     transition: all var(--timing-base) var(--ease-apple);
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    /* Center alignment */
+    text-align: center;
+}
+
+/* Feature the first card */
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .serviceCard:first-child {
+        grid-column: span 2;
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .serviceCard:first-child .iconWrapper {
+        margin-bottom: 0;
+        margin-right: var(--space-8);
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .serviceCard:first-child .serviceTitle {
+        font-size: var(--text-3xl);
+    }
 }
 
 .serviceCard:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-xl);
-    border-color: rgba(0, 113, 227, 0.3);
+    border-color: var(--gray-300);
 }
 
 .iconWrapper {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 4rem;
+    /* Larger icons */
+    height: 4rem;
     border-radius: var(--radius-xl);
-    background: linear-gradient(135deg, var(--gray-50) 0%, #fff 100%);
-    border: 1px solid var(--gray-100);
+    background: var(--gray-50);
+    border: 1px solid transparent;
     color: var(--accent-blue);
     margin-bottom: var(--space-6);
-    transition: transform var(--timing-base) var(--ease-apple);
+    transition: all var(--timing-base) var(--ease-apple);
 }
 
 .serviceCard:hover .iconWrapper {
     transform: scale(1.1);
-    background-color: var(--white);
-    box-shadow: var(--shadow-sm);
+    background-color: var(--accent-blue);
+    color: var(--white);
+    box-shadow: var(--shadow-md);
 }
 
 .serviceTitle {
@@ -62,13 +94,17 @@
     margin: 0;
     border-top: 1px solid var(--gray-100);
     padding-top: var(--space-6);
+    width: 100%;
+    text-align: left;
+    /* Keep list left-aligned even in centered cards */
 }
 
 .subServiceItem {
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
+    /* Increased from sm */
     color: var(--gray-600);
     margin-bottom: var(--space-3);
     font-weight: var(--font-medium);
