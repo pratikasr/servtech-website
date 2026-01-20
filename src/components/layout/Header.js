@@ -8,36 +8,26 @@ import styles from './Header.module.css';
 
 const servicesMenu = [
     {
-        category: 'Infrastructure & Cloud',
+        category: 'Core Infrastructure',
         items: [
-            { name: 'Cloud Computing Solutions', href: '/services/cloud-solutions' },
-            { name: 'Server Management', href: '/services/cloud-solutions' },
-            { name: 'Storage Solutions', href: '/services/cloud-solutions' },
-            { name: 'Networking Infrastructure', href: '/services/cloud-solutions' },
+            { name: 'Networking', href: '/services/networking' },
+            { name: 'Cloud & Infrastructure', href: '/services/cloud-infrastructure' },
+            { name: 'Storage & Data', href: '/services/storage-data' },
+            { name: 'Hardware & Devices', href: '/services/hardware-devices' },
         ]
     },
     {
-        category: 'Software Development',
-        items: [
-            { name: 'Web Development', href: '/services/software-development' },
-            { name: 'Mobile App Development', href: '/services/software-development' },
-            { name: 'Custom Software', href: '/services/software-development' },
-        ]
-    },
-    {
-        category: 'Advanced Technologies',
-        items: [
-            { name: 'Artificial Intelligence', href: '/services/ai-ml' },
-            { name: 'Big Data Analytics', href: '/services/ai-ml' },
-            { name: 'Blockchain & DLT', href: '/services/ai-ml' },
-        ]
-    },
-    {
-        category: 'Security Solutions',
+        category: 'Security & Access',
         items: [
             { name: 'Cybersecurity', href: '/services/cybersecurity' },
-            { name: 'Data Security', href: '/services/cybersecurity' },
-            { name: 'DDoS Protection', href: '/services/cybersecurity' },
+            { name: 'Physical Security', href: '/services/physical-security' },
+        ]
+    },
+    {
+        category: 'Business Solutions',
+        items: [
+            { name: 'Enterprise Software', href: '/services/enterprise-software' },
+            { name: 'Strategic Partners', href: '/partners' },
         ]
     },
 ];
