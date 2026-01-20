@@ -1,6 +1,7 @@
 .ctaSection {
     background: var(--gray-900);
-    /* Solid, not gradient */
+    background-image: radial-gradient(circle at 50% 0%, #1a1a1a 0%, var(--gray-900) 70%);
+    /* Subtle lighting from top */
     padding: var(--space-24) 0;
     position: relative;
 }

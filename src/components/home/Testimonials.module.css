@@ -21,30 +21,38 @@
 
 .testimonialSlider {
     position: relative;
-    min-height: 280px;
+    display: grid;
+    /* Stack cards on top of each other */
+    grid-template-areas: "card";
     max-width: 50rem;
     margin: 0 auto var(--space-8);
 }
 
 .testimonial {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    grid-area: card;
+    /* Occupy same grid cell */
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s var(--ease-apple);
+    transform: scale(0.95);
+    /* Slight zoom instead of translation */
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Apple ease */
     pointer-events: none;
     text-align: center;
     padding: var(--space-12);
-    background: var(--gray-50);
+
+    /* Glass Effect */
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: var(--radius-2xl);
-    border: 1px solid var(--gray-200);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
 }
 
 .testimonial.active {
     opacity: 1;
-    transform: translateY(0);
+    z-index: 1;
+    transform: scale(1);
     pointer-events: auto;
 }
 
