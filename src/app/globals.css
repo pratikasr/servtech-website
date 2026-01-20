@@ -12,182 +12,115 @@
 
 :root {
   /* ===== Typography ===== */
-
-  /* Font Families - System fonts with fallbacks */
   --font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
   --font-text: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;
 
-  /* Font Sizes - Reduced by 30-40% from original */
-  --text-xs: 0.6875rem;
-  /* 11px */
-  --text-sm: 0.8125rem;
-  /* 13px */
-  --text-base: 0.9375rem;
-  /* 15px */
-  --text-lg: 1.0625rem;
-  /* 17px */
-  --text-xl: 1.3125rem;
-  /* 21px */
-  --text-2xl: 1.75rem;
-  /* 28px */
+  /* Font Sizes - Calibrated for high-DPI "Retina" feel */
+  --text-xs: 0.75rem;
+  /* 12px */
+  --text-sm: 0.875rem;
+  /* 14px */
+  --text-base: 1rem;
+  /* 16px */
+  --text-lg: 1.125rem;
+  /* 18px */
+  --text-xl: 1.25rem;
+  /* 20px */
+  --text-2xl: 1.5rem;
+  /* 24px */
   --text-3xl: 2rem;
   /* 32px */
   --text-4xl: 2.5rem;
   /* 40px */
-  --text-5xl: 3rem;
-  /* 48px - MAXIMUM */
+  --text-5xl: 3.5rem;
+  /* 56px - Increased for impact */
+  --text-6xl: 4.5rem;
+  /* 72px - New Hero size */
 
-  /* Font Weights - Refined range */
+  /* Font Weights */
   --font-light: 300;
   --font-regular: 400;
   --font-medium: 500;
   --font-semibold: 600;
-  /* NO extrabold (800) */
 
-  /* Letter Spacing - Tighter for premium feel */
-  --tracking-tighter: -0.03em;
-  /* Large headings */
+  /* Letter Spacing */
+  --tracking-tighter: -0.04em;
+  /* More aggressive for headlines */
   --tracking-tight: -0.02em;
-  /* Headings */
   --tracking-normal: -0.01em;
-  /* Body text */
-  --tracking-wide: 0.01em;
-  /* Small text */
+  --tracking-wide: 0.02em;
 
-  /* Line Heights - Optimized */
+  /* Line Heights */
   --leading-none: 1;
   --leading-tight: 1.1;
-  --leading-snug: 1.2;
-  --leading-normal: 1.4;
-  --leading-relaxed: 1.5;
+  --leading-snug: 1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
 
-  /* ===== Colors - Monochrome + Single Accent ===== */
-
-  /* Base Grays (Apple palette) */
+  /* ===== Colors - Stark Monochrome ===== */
   --white: #FFFFFF;
-  --gray-50: #F5F5F7;
-  /* Apple's off-white for backgrounds */
-  --gray-100: #E5E5E7;
-  --gray-200: #D1D1D6;
-  --gray-300: #B0B0B5;
-  --gray-400: #898989;
+  --gray-50: #FBFBFD;
+  /* Very subtle warm tint, barely visible */
+  --gray-100: #F5F5F7;
+  --gray-200: #E5E5E7;
+  --gray-300: #D2D2D7;
+  --gray-400: #86868B;
   --gray-500: #6E6E73;
-  /* Secondary text */
-  --gray-600: #56565A;
-  --gray-700: #424245;
-  --gray-800: #2C2C2E;
+  --gray-600: #424245;
+  /* Darker secondary */
+  --gray-700: #1D1D1F;
+  --gray-800: #1D1D1F;
   --gray-900: #1D1D1F;
-  /* Primary text (Apple's) */
-  --gray-950: #000000;
+  /* Apple's "black" is often #1D1D1F */
+  --black: #000000;
 
-  /* Accent Color (Single) */
+  /* Accent - Refined Blue */
   --accent-blue: #0071E3;
-  /* Apple blue */
   --accent-blue-hover: #0077ED;
-  --accent-blue-pressed: #0062CC;
+  --accent-blue-subtle: rgba(0, 113, 227, 0.08);
 
-  /* Semantic Colors (Minimal use) */
-  --success: #30D158;
-  /* Apple green */
-  --error: #FF3B30;
-  /* Apple red */
-  --warning: #FF9F0A;
-  /* Apple orange */
-
-  /* ===== Spacing - 4px Grid System ===== */
+  /* ===== Spacing - Expansive ===== */
   --space-1: 0.25rem;
-  /* 4px */
   --space-2: 0.5rem;
-  /* 8px */
   --space-3: 0.75rem;
-  /* 12px */
   --space-4: 1rem;
-  /* 16px */
   --space-5: 1.25rem;
-  /* 20px */
   --space-6: 1.5rem;
-  /* 24px */
   --space-8: 2rem;
-  /* 32px */
   --space-10: 2.5rem;
-  /* 40px */
   --space-12: 3rem;
-  /* 48px */
   --space-16: 4rem;
-  /* 64px */
   --space-20: 5rem;
-  /* 80px */
   --space-24: 6rem;
-  /* 96px */
-  --space-30: 7.5rem;
-  /* 120px */
-  --space-40: 10rem;
-  /* 160px */
+  --space-32: 8rem;
+  /* New massive spacer */
 
-  /* Section Padding */
-  --section-y-desktop: 7.5rem;
-  /* 120px */
-  --section-y-tablet: 5rem;
-  /* 80px */
-  --section-y-mobile: 3.75rem;
-  /* 60px */
+  /* Layout */
+  --container-max: 80rem;
+  /* Wider: 1280px */
+  --container-padding-desktop: 2rem;
+  --container-padding-mobile: 1.25rem;
 
-  /* Container */
-  --container-max: 70rem;
-  /* 1120px - tighter than before */
-  --container-padding-desktop: 5rem;
-  /* 80px */
-  --container-padding-mobile: 1.5rem;
-  /* 24px */
-
-  /* ===== Animation & Transitions ===== */
-
-  /* Timing - Faster, more responsive */
-  --timing-instant: 100ms;
-  --timing-fast: 150ms;
-  --timing-base: 200ms;
-  --timing-slow: 300ms;
-
-  /* Easing - Apple's signature curve */
+  /* ===== Physics-based Animation ===== */
+  --timing-fast: 200ms;
+  --timing-base: 400ms;
   --ease-apple: cubic-bezier(0.25, 0.1, 0.25, 1);
-  --ease-in: cubic-bezier(0.42, 0, 1, 1);
-  --ease-out: cubic-bezier(0, 0, 0.58, 1);
-  --ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  /* "Springy" feel */
 
-  /* Transforms - Minimal */
-  --hover-lift: translateY(-1px);
-  /* 1px MAX */
-  --hover-lift-card: translateY(-2px);
-  /* 2px for cards only */
+  /* ===== Effects ===== */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  /* Smoother spread */
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.14);
 
-  /* ===== Shadows - Subtle ===== */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.10);
-  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.12);
-
-  /* ===== Border Radius ===== */
-  --radius-sm: 0.375rem;
-  /* 6px */
-  --radius-md: 0.5rem;
-  /* 8px */
   --radius-lg: 0.75rem;
-  /* 12px */
   --radius-xl: 1rem;
-  /* 16px */
   --radius-2xl: 1.5rem;
-  /* 24px */
+  --radius-3xl: 2rem;
+  /* New larger radius */
   --radius-full: 9999px;
-
-  /* ===== Z-index Scale ===== */
-  --z-dropdown: 1000;
-  --z-sticky: 1100;
-  --z-fixed: 1200;
-  --z-modal-backdrop: 1300;
-  --z-modal: 1400;
-  --z-popover: 1500;
-  --z-tooltip: 1600;
 }
 
 /* ============================================

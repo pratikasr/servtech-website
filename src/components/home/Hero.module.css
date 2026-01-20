@@ -1,100 +1,67 @@
 .hero {
     position: relative;
-    min-height: 85vh;
-    /* Increased for impact */
+    min-height: 90vh;
+    /* Dominant height */
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding-top: var(--space-30);
-    /* More breathing room */
-    padding-bottom: var(--space-30);
-    box-shadow: inset 0 1px 0 var(--gray-200);
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-24);
+    background-color: var(--white);
+    /* Pure white background */
 }
 
-.heroBackground {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background: var(--white);
-    overflow: hidden;
-}
-
-.heroBackground::before {
-    content: '';
-    position: absolute;
-    top: -20%;
-    left: -10%;
-    width: 60%;
-    height: 60%;
-    background: radial-gradient(circle, rgba(0, 113, 227, 0.12) 0%, rgba(0, 113, 227, 0) 70%);
-    filter: blur(80px);
-    opacity: 0.8;
-    animation: drift 10s ease-in-out infinite alternate;
-}
-
-.heroBackground::after {
-    content: '';
-    position: absolute;
-    bottom: -20%;
-    right: -10%;
-    width: 60%;
-    height: 60%;
-    background: radial-gradient(circle, rgba(94, 92, 230, 0.12) 0%, rgba(94, 92, 230, 0) 70%);
-    filter: blur(80px);
-    opacity: 0.8;
-    animation: drift 15s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes drift {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(20px, 30px);
-    }
-}
+/* 
+   Eye Bleach Removal: 
+   REMOVED .heroBackground and its pseudo-elements (the blobs).
+   Replaced with a subtle, structured grid or pure white.
+*/
 
 .heroContent {
     position: relative;
     text-align: center;
-    max-width: 64rem;
-    /* Increased width for larger text */
+    max-width: 72rem;
+    /* Wide to accommodate large text */
     margin: 0 auto;
     padding: var(--space-12) 0;
-    animation: fadeInUp 0.6s var(--ease-apple);
+    z-index: 2;
 }
 
 .title {
-    font-size: var(--text-5xl);
-    /* Massive impactful title */
+    font-size: var(--text-6xl);
+    /* Stark, Massive */
     font-weight: var(--font-semibold);
     color: var(--gray-900);
     margin-bottom: var(--space-8);
-    line-height: var(--leading-tight);
+    line-height: var(--leading-none);
+    /* Tightest leading */
     letter-spacing: var(--tracking-tighter);
+    opacity: 0;
+    animation: fadeUp 1s var(--ease-out-expo) forwards;
+    /* Custom premium easing */
 }
 
 @media (max-width: 768px) {
     .title {
         font-size: var(--text-4xl);
+        line-height: var(--leading-tight);
     }
 }
 
 .subtitle {
     font-size: var(--text-2xl);
-    /* Significantly larger to match About page */
+    font-weight: var(--font-medium);
     color: var(--gray-500);
+    /* Stark contrast */
     margin-bottom: var(--space-12);
-    line-height: var(--leading-snug);
-    max-width: 48rem;
+    line-height: var(--leading-relaxed);
+    max-width: 42rem;
     margin-left: auto;
     margin-right: auto;
-    font-weight: var(--font-medium);
+    opacity: 0;
+    animation: fadeUp 1s var(--ease-out-expo) 0.2s forwards;
+    /* Staggered */
 }
 
 @media (max-width: 768px) {
@@ -105,37 +72,40 @@
 
 .ctaGroup {
     display: flex;
-    gap: var(--space-6);
+    gap: var(--space-5);
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 1s var(--ease-out-expo) 0.4s forwards;
+    /* Staggered */
 }
 
-/* Secondary CTA as text link */
+/* Secondary CTA - Hyper-minimal */
 .secondaryCta {
     font-size: var(--text-lg);
-    /* Larger */
     font-weight: var(--font-medium);
     color: var(--accent-blue);
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: var(--space-3) var(--space-4);
+    padding: var(--space-3) var(--space-5);
     transition: all var(--timing-fast) var(--ease-apple);
-    letter-spacing: var(--tracking-normal);
 }
 
 .secondaryCta:hover {
     color: var(--accent-blue-hover);
-    transform: none;
+    opacity: 0.8;
 }
 
-/* Remove trust badges entirely */
-.trustBadges {
-    display: none;
-}
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
-/* Remove scroll indicator */
-.scrollIndicator {
-    display: none;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
