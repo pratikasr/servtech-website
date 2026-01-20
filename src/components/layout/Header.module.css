@@ -3,33 +3,31 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: var(--z-sticky);
+    z-index: var(--z-fixed);
     transition: all var(--timing-base) var(--ease-apple);
+    padding: var(--space-6) 0;
     background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--gray-200);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0);
 }
 
-.scrolled {
-    background: rgba(255, 255, 255, 0.95);
-    border-bottom-color: var(--gray-300);
+.header.scrolled {
+    padding: var(--space-4) 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
 }
 
-.headerContent {
+.nav {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    height: 60px;
-    /* Reduced from 80px */
-    gap: var(--space-8);
+    align-items: center;
 }
 
 /* Logo - Simpler without gradient */
 .logo {
     font-size: var(--text-xl);
-    /* Reduced from 2xl */
-    font-weight: var(--font-semibold);
     color: var(--gray-900);
     text-decoration: none;
     transition: opacity var(--timing-fast) var(--ease-apple);
