@@ -1,18 +1,16 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { partnersData } from '../../data/partners';
 import styles from './FeaturedClients.module.css';
 
-const clients = [
-    { name: 'Microsoft', industry: 'Cloud & AI' },
-    { name: 'Cisco', industry: 'Networking' },
-    { name: 'AWS', industry: 'Cloud Infrastructure' },
-    { name: 'Fortinet', industry: 'Cybersecurity' },
-    { name: 'Palo Alto', industry: 'Network Security' },
-    { name: 'Dell EMC', industry: 'Storage & Server' },
-    { name: 'Oracle', industry: 'Enterprise Software' },
-    { name: 'VMware', industry: 'Virtualization' },
-    { name: 'Red Hat', industry: 'Open Source' },
-    { name: 'Juniper', industry: 'Networking' },
-    { name: 'Google Cloud', industry: 'Cloud Computing' }
+// Select strategic partners for the homepage
+const strategicPartnerNames = [
+    'Microsoft', 'AWS', 'Google', 'Cisco', 'Fortinet',
+    'Palo Alto Networks', 'Dell EMC', 'Oracle', 'Red Hat',
+    'Juniper', 'IBM', 'NetApp'
 ];
+
+const clients = partnersData.filter(p => strategicPartnerNames.includes(p.name));
 
 export default function FeaturedClients() {
     return (
@@ -30,11 +28,26 @@ export default function FeaturedClients() {
             <div className={styles.marqueeWrapper}>
                 <div className={styles.marqueeContainer}>
                     <div className={styles.marqueeContent}>
-                        {[...clients, ...clients].map((client, index) => (
-                            <div key={`${client.name}-${index}`} className={styles.card}>
-                                <div className={styles.clientName}>{client.name}</div>
-                                <div className={styles.industry}>{client.industry}</div>
-                            </div>
+                        {/* Triple duplication for smooth infinite scroll */}
+                        {[...clients, ...clients, ...clients].map((client, index) => (
+                            <Link
+                                key={`${client.name}-${index}`}
+                                href={`/partners?category=${encodeURIComponent(client.category)}`}
+                                className={styles.card}
+                            >
+                                <div className={styles.logoWrapper}>
+                                    {client.logo ? (
+                                        <Image
+                                            src={client.logo}
+                                            alt={`${client.name} logo`}
+                                            fill
+                                            className={styles.logoImage}
+                                        />
+                                    ) : (
+                                        <div className={styles.clientName}>{client.name}</div>
+                                    )}
+                                </div>
+                            </Link>
                         ))}
                     </div>
                 </div>

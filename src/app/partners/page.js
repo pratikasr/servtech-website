@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import PageHeader from '@/components/common/PageHeader';
@@ -14,13 +16,11 @@ function PartnersContent() {
     // Sync active category with URL param on load
     useEffect(() => {
         if (initialCategory) {
-            // Decoding URI component to handle spaces/ampersands correctly
             const decodedCategory = decodeURIComponent(initialCategory);
             setActiveCategory(decodedCategory);
         }
     }, [initialCategory]);
 
-    // Extract unique categories, sorted alphabetically
     const categories = ['All', ...new Set(partnersData.map(p => p.category))].sort();
 
     const filteredPartners = activeCategory === 'All'
@@ -59,11 +59,22 @@ function PartnersContent() {
                                 rel="noopener noreferrer"
                                 className={styles.card}
                             >
-                                <div className={styles.logoPlaceholder}>
-                                    {partner.name}
+                                <div className={styles.logoWrapper}>
+                                    {partner.logo ? (
+                                        <Image
+                                            src={partner.logo}
+                                            alt={`${partner.name} logo`}
+                                            fill
+                                            className={styles.logoImage}
+                                            sizes="(max-width: 768px) 50vw, 25vw"
+                                        />
+                                    ) : (
+                                        <span className={styles.logoText}>{partner.name}</span>
+                                    )}
                                 </div>
-                                <div className={styles.cardCategory}>
-                                    {partner.category}
+                                <div className={styles.cardContent}>
+                                    <h3 className={styles.partnerName}>{partner.name}</h3>
+                                    <span className={styles.partnerCategory}>{partner.category}</span>
                                 </div>
                             </a>
                         ))}
