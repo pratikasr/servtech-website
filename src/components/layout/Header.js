@@ -95,9 +95,6 @@ export default function Header() {
                             Industries
                         </Link>
 
-                        <Link href="/portfolio" className={styles.navLink}>
-                            Portfolio
-                        </Link>
 
                         <Link href="/about" className={styles.navLink}>
                             About
@@ -136,9 +133,6 @@ export default function Header() {
                         </Link>
                         <Link href="/industries" onClick={() => setIsMobileMenuOpen(false)}>
                             Industries
-                        </Link>
-                        <Link href="/portfolio" onClick={() => setIsMobileMenuOpen(false)}>
-                            Portfolio
                         </Link>
                         <Link href="/about" onClick={() => setIsMobileMenuOpen(false)}>
                             About
