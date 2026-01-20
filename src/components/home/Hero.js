@@ -12,8 +12,6 @@ export default function Hero() {
 
     return (
         <section className={styles.hero}>
-            <div className={styles.heroBackground}></div>
-
             <div className="container">
                 <div className={styles.heroContent}>
                     <h1 className={styles.title}>
