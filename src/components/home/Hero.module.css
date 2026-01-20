@@ -6,10 +6,11 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding-top: var(--space-24);
+    padding-top: calc(var(--space-32) + 60px);
+    /* Clear header + breathing room */
     padding-bottom: var(--space-24);
-    background-color: var(--white);
-    /* Pure white background */
+    background-color: var(--white) !important;
+    /* Force Pure white */
 }
 
 /* 
