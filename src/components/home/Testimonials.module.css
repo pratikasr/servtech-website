@@ -4,17 +4,18 @@
 
 .header {
     text-align: center;
-    max-width: 45rem;
-    margin: 0 auto var(--space-16);
+    max-width: 50rem;
+    margin: 0 auto var(--space-20);
 }
 
 .header h2 {
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-6);
     color: var(--gray-900);
 }
 
 .header p {
-    font-size: var(--text-base);
+    font-size: var(--text-xl);
+    /* Increased from base */
     color: var(--gray-500);
     line-height: var(--leading-relaxed);
 }
@@ -22,23 +23,21 @@
 .testimonialSlider {
     position: relative;
     display: grid;
-    /* Stack cards on top of each other */
     grid-template-areas: "card";
     max-width: 50rem;
-    margin: 0 auto var(--space-8);
+    /* Kept same */
+    margin: 0 auto var(--space-12);
 }
 
 .testimonial {
     grid-area: card;
-    /* Occupy same grid cell */
     opacity: 0;
     transform: scale(0.95);
-    /* Slight zoom instead of translation */
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    /* Apple ease */
     pointer-events: none;
     text-align: center;
-    padding: var(--space-12);
+    padding: var(--space-16);
+    /* Increased padding for more white space */
 
     /* Glass Effect */
     background: rgba(255, 255, 255, 0.6);
@@ -59,15 +58,19 @@
 .quoteIcon {
     color: var(--accent-blue);
     opacity: 0.2;
-    margin: 0 auto var(--space-6);
+    margin: 0 auto var(--space-8);
+    width: 3rem;
+    /* Enforce size */
+    height: 3rem;
 }
 
 .quote {
-    font-size: var(--text-xl);
+    font-size: var(--text-2xl);
+    /* Increased from xl */
     line-height: var(--leading-relaxed);
     color: var(--gray-900);
-    margin-bottom: var(--space-8);
-    font-weight: var(--font-regular);
+    margin-bottom: var(--space-10);
+    font-weight: var(--font-medium);
     letter-spacing: var(--tracking-normal);
 }
 
@@ -85,12 +88,14 @@
 .authorName {
     font-weight: var(--font-semibold);
     color: var(--gray-900);
-    font-size: var(--text-base);
+    font-size: var(--text-lg);
+    /* Increased from base */
     margin-bottom: var(--space-1);
 }
 
 .authorRole {
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
+    /* Increased from sm */
     color: var(--gray-500);
 }
 
@@ -98,14 +103,14 @@
 .dots {
     display: flex;
     justify-content: center;
-    gap: var(--space-2);
+    gap: var(--space-3);
 }
 
 .dot {
     width: 8px;
     height: 8px;
     border-radius: var(--radius-full);
-    background: var(--gray-300);
+    background: var(--gray-200);
     border: none;
     padding: 0;
     cursor: pointer;
@@ -117,13 +122,14 @@
 }
 
 .activeDot {
-    width: 24px;
+    width: 32px;
+    /* Longer pill */
     background: var(--accent-blue);
 }
 
 @media (max-width: 767px) {
     .quote {
-        font-size: var(--text-lg);
+        font-size: var(--text-xl);
     }
 
     .testimonial {

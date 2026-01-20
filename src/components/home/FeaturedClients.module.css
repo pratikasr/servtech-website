@@ -14,7 +14,8 @@
 }
 
 .header p {
-    font-size: var(--text-base);
+    font-size: var(--text-xl);
+    /* Increased from base */
     color: var(--gray-500);
     line-height: var(--leading-relaxed);
 }
@@ -22,8 +23,9 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
-    margin-bottom: var(--space-16);
+    gap: var(--space-6);
+    /* Increased gap */
+    margin-bottom: var(--space-20);
 }
 
 @media (min-width: 768px) {
@@ -42,21 +44,23 @@
     background: var(--white);
     border: 1px solid var(--gray-200);
     border-radius: var(--radius-lg);
-    padding: var(--space-6);
+    padding: var(--space-8);
+    /* Increased padding */
     text-align: center;
     transition: all var(--timing-fast) var(--ease-apple);
 }
 
 .card:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
     border-color: var(--gray-300);
 }
 
 .clientName {
     font-weight: var(--font-semibold);
     color: var(--gray-900);
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
+    /* Increased from sm */
     margin-bottom: var(--space-2);
 }
 
@@ -65,6 +69,7 @@
     color: var(--gray-500);
     text-transform: uppercase;
     letter-spacing: var(--tracking-wide);
+    font-weight: var(--font-medium);
 }
 
 /* Stats Row */
@@ -72,9 +77,10 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: var(--space-8);
-    max-width: 50rem;
+    max-width: 60rem;
+    /* Increased width */
     margin: 0 auto;
-    padding-top: var(--space-12);
+    padding-top: var(--space-16);
     border-top: 1px solid var(--gray-200);
 }
 
@@ -89,7 +95,8 @@
 }
 
 .statValue {
-    font-size: var(--text-4xl);
+    font-size: var(--text-5xl);
+    /* Increased from 4xl */
     font-weight: var(--font-semibold);
     color: var(--accent-blue);
     margin-bottom: var(--space-2);
@@ -97,7 +104,8 @@
 }
 
 .statLabel {
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
+    /* Increased from sm */
     color: var(--gray-600);
     font-weight: var(--font-medium);
 }
