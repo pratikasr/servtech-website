@@ -42,7 +42,7 @@ export default function Footer() {
                         <ul>
                             <li><Link href="/">Home</Link></li>
                             <li><Link href="/about">About Us</Link></li>
-                            <li><Link href="/services">Services</Link></li>
+                            <li><Link href="/partners">Services</Link></li>
                             <li><Link href="/industries">Industries</Link></li>
                             <li><Link href="/partners">Partners</Link></li>
                             <li><Link href="/contact">Contact</Link></li>
@@ -53,12 +53,13 @@ export default function Footer() {
                     <div className={styles.column}>
                         <h4>Services</h4>
                         <ul>
-                            <li><Link href="/services/cloud-solutions">Cloud Solutions</Link></li>
-                            <li><Link href="/services/ai-ml">AI & Machine Learning</Link></li>
-                            <li><Link href="/services/cybersecurity">Cybersecurity</Link></li>
-                            <li><Link href="/services/software-development">Software Development</Link></li>
-                            <li><Link href="/services/enterprise-solutions">Enterprise Solutions</Link></li>
-                            <li><Link href="/services/managed-services">Managed Services</Link></li>
+                            <li><Link href="/partners?category=Cybersecurity">Cybersecurity</Link></li>
+                            <li><Link href="/partners?category=Networking">Networking</Link></li>
+                            <li><Link href="/partners?category=Cloud%20%26%20Infrastructure">Cloud & Infrastructure</Link></li>
+                            <li><Link href="/partners?category=Storage">Storage & Data</Link></li>
+                            <li><Link href="/partners?category=Enterprise%20Software">Enterprise Software</Link></li>
+                            <li><Link href="/partners?category=Physical%20Security">Physical Security</Link></li>
+                            <li><Link href="/partners?category=Hardware">Hardware & Devices</Link></li>
                         </ul>
                     </div>
 
