@@ -38,21 +38,22 @@
 
 .card {
     position: relative;
-    padding: var(--space-10);
+    padding: var(--space-8);
     background: var(--white);
     border-radius: var(--radius-2xl);
-    border: 1px solid var(--gray-100);
+    border: 1px solid var(--gray-200);
+    /* Crisp border */
     text-decoration: none;
     transition: all var(--timing-base) var(--ease-apple);
-    overflow: visible;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-xl);
-    border-color: rgba(0, 113, 227, 0.3);
+    border-color: var(--gray-300);
 }
 
 .iconWrapper {
@@ -61,32 +62,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-5);
     color: var(--accent-blue);
-    background: linear-gradient(135deg, var(--gray-50) 0%, #fff 100%);
-    border: 1px solid var(--gray-100);
+    background: var(--gray-50);
+    /* Subtle contrast */
     border-radius: var(--radius-xl);
-    transition: transform var(--timing-base) var(--ease-apple);
+    transition: all var(--timing-base) var(--ease-apple);
 }
 
 .card:hover .iconWrapper {
-    transform: scale(1.1);
-    background: var(--white);
-    box-shadow: var(--shadow-sm);
+    transform: scale(1.05);
+    /* Subtle scale */
+    background: var(--accent-blue);
+    color: var(--white);
+    /* Invert on hover */
 }
 
 .card h3 {
     font-size: var(--text-2xl);
-    /* Increased from xl */
     color: var(--gray-900);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-2);
     font-weight: var(--font-semibold);
     letter-spacing: var(--tracking-tight);
 }
 
 .card p {
     font-size: var(--text-base);
-    /* Increased from sm */
     color: var(--gray-500);
     line-height: var(--leading-relaxed);
     margin-bottom: 0;
