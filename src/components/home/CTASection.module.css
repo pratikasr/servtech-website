@@ -1,0 +1,65 @@
+.ctaSection {
+    background: var(--gray-900);
+    /* Solid, not gradient */
+    padding: var(--space-24) 0;
+    position: relative;
+}
+
+.content {
+    text-align: center;
+    max-width: 40rem;
+    /* Tighter */
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.content h2 {
+    font-size: var(--text-4xl);
+    /* Reduced from huge */
+    color: var(--white);
+    margin-bottom: var(--space-4);
+    font-weight: var(--font-semibold);
+}
+
+.content p {
+    font-size: var(--text-base);
+    /* Smaller */
+    color: var(--gray-400);
+    margin-bottom: var(--space-8);
+    line-height: var(--leading-relaxed);
+}
+
+.ctaGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--gray-400);
+    font-size: var(--text-sm);
+}
+
+.phone {
+    font-size: var(--text-xl);
+    /* Reduced from 2xl */
+    font-weight: var(--font-semibold);
+    color: var(--white);
+    text-decoration: none;
+    transition: all var(--timing-fast) var(--ease-apple);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+}
+
+.phone:hover {
+    color: var(--accent-blue);
+    background: rgba(0, 113, 227, 0.1);
+    transform: none;
+    /* No scale */
+}

@@ -1,0 +1,111 @@
+.hero {
+    position: relative;
+    min-height: 75vh;
+    /* Reduced from 100vh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-24);
+    /* Add separation from header */
+    box-shadow: inset 0 1px 0 var(--gray-200);
+}
+
+.heroBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+    /* Subtle, not bold */
+}
+
+/* Remove pulsing radial gradients */
+.heroBackground::before {
+    display: none;
+}
+
+.heroContent {
+    position: relative;
+    text-align: center;
+    max-width: 50rem;
+    /* Reduced from 900px */
+    margin: 0 auto;
+    padding: var(--space-12) 0;
+    animation: fadeInUp 0.6s var(--ease-apple);
+}
+
+.title {
+    font-size: var(--text-5xl);
+    /* 48px max - reduced from 64px */
+    font-weight: var(--font-semibold);
+    /* Not extrabold */
+    color: var(--gray-900);
+    margin-bottom: var(--space-6);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tighter);
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: var(--text-4xl);
+        /* 40px on mobile */
+    }
+}
+
+.subtitle {
+    font-size: var(--text-lg);
+    /* Reduced from text-xl */
+    color: var(--gray-500);
+    margin-bottom: var(--space-10);
+    line-height: var(--leading-relaxed);
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .subtitle {
+        font-size: var(--text-base);
+    }
+}
+
+.ctaGroup {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Secondary CTA as text link */
+.secondaryCta {
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+    color: var(--accent-blue);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-3) var(--space-4);
+    transition: all var(--timing-fast) var(--ease-apple);
+    letter-spacing: var(--tracking-normal);
+}
+
+.secondaryCta:hover {
+    color: var(--accent-blue-hover);
+    transform: none;
+    /* No movement */
+}
+
+/* Remove trust badges entirely */
+.trustBadges {
+    display: none;
+}
+
+/* Remove scroll indicator */
+.scrollIndicator {
+    display: none;
+}

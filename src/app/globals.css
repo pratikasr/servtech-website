@@ -1,13 +1,212 @@
+/* ============================================
+   SERVTECH PREMIUM DESIGN SYSTEM
+   Apple-tier refinement and consistency
+   ============================================ */
+
+/* System Fonts for Apple-like feel */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+/* ============================================
+   CSS Variables - Apple-Inspired Tokens
+   ============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ===== Typography ===== */
+
+  /* Font Families - System fonts with fallbacks */
+  --font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
+  --font-text: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;
+
+  /* Font Sizes - Reduced by 30-40% from original */
+  --text-xs: 0.6875rem;
+  /* 11px */
+  --text-sm: 0.8125rem;
+  /* 13px */
+  --text-base: 0.9375rem;
+  /* 15px */
+  --text-lg: 1.0625rem;
+  /* 17px */
+  --text-xl: 1.3125rem;
+  /* 21px */
+  --text-2xl: 1.75rem;
+  /* 28px */
+  --text-3xl: 2rem;
+  /* 32px */
+  --text-4xl: 2.5rem;
+  /* 40px */
+  --text-5xl: 3rem;
+  /* 48px - MAXIMUM */
+
+  /* Font Weights - Refined range */
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  /* NO extrabold (800) */
+
+  /* Letter Spacing - Tighter for premium feel */
+  --tracking-tighter: -0.03em;
+  /* Large headings */
+  --tracking-tight: -0.02em;
+  /* Headings */
+  --tracking-normal: -0.01em;
+  /* Body text */
+  --tracking-wide: 0.01em;
+  /* Small text */
+
+  /* Line Heights - Optimized */
+  --leading-none: 1;
+  --leading-tight: 1.1;
+  --leading-snug: 1.2;
+  --leading-normal: 1.4;
+  --leading-relaxed: 1.5;
+
+  /* ===== Colors - Monochrome + Single Accent ===== */
+
+  /* Base Grays (Apple palette) */
+  --white: #FFFFFF;
+  --gray-50: #F5F5F7;
+  /* Apple's off-white for backgrounds */
+  --gray-100: #E5E5E7;
+  --gray-200: #D1D1D6;
+  --gray-300: #B0B0B5;
+  --gray-400: #898989;
+  --gray-500: #6E6E73;
+  /* Secondary text */
+  --gray-600: #56565A;
+  --gray-700: #424245;
+  --gray-800: #2C2C2E;
+  --gray-900: #1D1D1F;
+  /* Primary text (Apple's) */
+  --gray-950: #000000;
+
+  /* Accent Color (Single) */
+  --accent-blue: #0071E3;
+  /* Apple blue */
+  --accent-blue-hover: #0077ED;
+  --accent-blue-pressed: #0062CC;
+
+  /* Semantic Colors (Minimal use) */
+  --success: #30D158;
+  /* Apple green */
+  --error: #FF3B30;
+  /* Apple red */
+  --warning: #FF9F0A;
+  /* Apple orange */
+
+  /* ===== Spacing - 4px Grid System ===== */
+  --space-1: 0.25rem;
+  /* 4px */
+  --space-2: 0.5rem;
+  /* 8px */
+  --space-3: 0.75rem;
+  /* 12px */
+  --space-4: 1rem;
+  /* 16px */
+  --space-5: 1.25rem;
+  /* 20px */
+  --space-6: 1.5rem;
+  /* 24px */
+  --space-8: 2rem;
+  /* 32px */
+  --space-10: 2.5rem;
+  /* 40px */
+  --space-12: 3rem;
+  /* 48px */
+  --space-16: 4rem;
+  /* 64px */
+  --space-20: 5rem;
+  /* 80px */
+  --space-24: 6rem;
+  /* 96px */
+  --space-30: 7.5rem;
+  /* 120px */
+  --space-40: 10rem;
+  /* 160px */
+
+  /* Section Padding */
+  --section-y-desktop: 7.5rem;
+  /* 120px */
+  --section-y-tablet: 5rem;
+  /* 80px */
+  --section-y-mobile: 3.75rem;
+  /* 60px */
+
+  /* Container */
+  --container-max: 70rem;
+  /* 1120px - tighter than before */
+  --container-padding-desktop: 5rem;
+  /* 80px */
+  --container-padding-mobile: 1.5rem;
+  /* 24px */
+
+  /* ===== Animation & Transitions ===== */
+
+  /* Timing - Faster, more responsive */
+  --timing-instant: 100ms;
+  --timing-fast: 150ms;
+  --timing-base: 200ms;
+  --timing-slow: 300ms;
+
+  /* Easing - Apple's signature curve */
+  --ease-apple: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-in: cubic-bezier(0.42, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.58, 1);
+  --ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+
+  /* Transforms - Minimal */
+  --hover-lift: translateY(-1px);
+  /* 1px MAX */
+  --hover-lift-card: translateY(-2px);
+  /* 2px for cards only */
+
+  /* ===== Shadows - Subtle ===== */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.10);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.12);
+
+  /* ===== Border Radius ===== */
+  --radius-sm: 0.375rem;
+  /* 6px */
+  --radius-md: 0.5rem;
+  /* 8px */
+  --radius-lg: 0.75rem;
+  /* 12px */
+  --radius-xl: 1rem;
+  /* 16px */
+  --radius-2xl: 1.5rem;
+  /* 24px */
+  --radius-full: 9999px;
+
+  /* ===== Z-index Scale ===== */
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-fixed: 1200;
+  --z-modal-backdrop: 1300;
+  --z-modal: 1400;
+  --z-popover: 1500;
+  --z-tooltip: 1600;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================
+   CSS Reset & Base Styles
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
@@ -17,26 +216,226 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-text);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  color: var(--gray-900);
+  background-color: var(--white);
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* ============================================
+   Typography Base Styles
+   ============================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+  color: var(--gray-900);
+  letter-spacing: var(--tracking-tight);
+}
+
+h1 {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-tighter);
+  line-height: var(--leading-none);
+}
+
+h2 {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+h3 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-tight);
+}
+
+h4 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-medium);
+}
+
+h5 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-medium);
+}
+
+h6 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+}
+
+p {
+  margin-bottom: var(--space-4);
+  color: var(--gray-500);
+  line-height: var(--leading-relaxed);
 }
 
 a {
-  color: inherit;
+  color: var(--accent-blue);
   text-decoration: none;
+  transition: color var(--timing-fast) var(--ease-apple);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+a:hover {
+  color: var(--accent-blue-hover);
+}
+
+/* Fix: Buttons should keep white text on hover */
+a.button:hover,
+button:hover {
+  color: var(--white) !important;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+strong,
+b {
+  font-weight: var(--font-semibold);
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding-mobile);
+  padding-right: var(--container-padding-mobile);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--space-12);
+    padding-right: var(--space-12);
   }
 }
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: var(--container-padding-desktop);
+    padding-right: var(--container-padding-desktop);
+  }
+}
+
+.section {
+  padding-top: var(--section-y-mobile);
+  padding-bottom: var(--section-y-mobile);
+}
+
+/* Reduce excessive mobile spacing */
+@media (max-width: 767px) {
+  .section {
+    padding-top: 2.5rem;
+    /* 40px instead of 60px */
+    padding-bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: var(--section-y-tablet);
+    padding-bottom: var(--section-y-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-top: var(--section-y-desktop);
+    padding-bottom: var(--section-y-desktop);
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--gray-700) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   Focus & Accessibility
+   ============================================ */
+
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ============================================
+   Animations & Keyframes - Subtle Only
+   ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    /* Reduced from 30px */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s var(--ease-apple) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s var(--ease-apple) forwards;
+}
+
+/* ============================================
+   Responsive Breakpoints Helper Comments
+   ============================================ */
+
+/* 
+  Breakpoint reference:
+  - sm: 640px
+  - md: 768px
+  - lg: 1024px
+  - xl: 1280px
+  - 2xl: 1536px
+*/

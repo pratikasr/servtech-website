@@ -1,0 +1,246 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-sticky);
+    transition: all var(--timing-base) var(--ease-apple);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom-color: var(--gray-300);
+}
+
+.headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    /* Reduced from 80px */
+    gap: var(--space-8);
+}
+
+/* Logo - Simpler without gradient */
+.logo {
+    font-size: var(--text-xl);
+    /* Reduced from 2xl */
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+    text-decoration: none;
+    transition: opacity var(--timing-fast) var(--ease-apple);
+    display: flex;
+    align-items: center;
+}
+
+.logo:hover {
+    opacity: 0.7;
+    /* Simple fade instead of scale */
+    transform: none;
+}
+
+.logoText {
+    display: flex;
+    align-items: center;
+    color: var(--gray-900);
+    /* No gradient */
+}
+
+/* Desktop Navigation */
+.desktopNav {
+    display: none;
+    align-items: center;
+    gap: var(--space-8);
+    /* More spacing */
+    flex: 1;
+    justify-content: center;
+}
+
+@media (min-width: 1024px) {
+    .desktopNav {
+        display: flex;
+    }
+}
+
+.navLink {
+    color: var(--gray-700);
+    font-weight: var(--font-regular);
+    /* Not medium */
+    font-size: var(--text-sm);
+    /* Smaller */
+    text-decoration: none;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    transition: all var(--timing-fast) var(--ease-apple);
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-text);
+    letter-spacing: var(--tracking-normal);
+}
+
+.navLink:hover {
+    color: var(--gray-900);
+    background: var(--gray-100);
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+/* Add padding to dropdown to bridge gap */
+.dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 12px;
+    /* Bridge the gap */
+    pointer-events: auto;
+}
+
+/* Mega Menu */
+.megaMenu {
+    position: absolute;
+    top: calc(100% + 2px);
+    /* Reduced gap from 8px to 2px */
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    padding: var(--space-8);
+    min-width: 800px;
+    animation: fadeIn 0.2s var(--ease-apple);
+    z-index: var(--z-dropdown);
+    border: 1px solid var(--gray-200);
+}
+
+.megaMenuContent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+}
+
+.menuSection h4 {
+    font-size: var(--text-base);
+    /* Smaller */
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.menuSection ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menuSection li {
+    margin-bottom: var(--space-2);
+}
+
+.menuSection a {
+    color: var(--gray-700);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    transition: all var(--timing-fast) var(--ease-apple);
+    display: flex;
+    align-items: center;
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+}
+
+.menuSection a:hover {
+    color: var(--gray-900);
+    background: var(--gray-100);
+    padding-left: var(--space-2);
+    /* No sliding */
+}
+
+/* CTA Button */
+.ctaButton {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .ctaButton {
+        display: inline-flex;
+    }
+}
+
+/* Mobile Menu Toggle */
+.mobileMenuToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--gray-900);
+    cursor: pointer;
+    padding: var(--space-2);
+    transition: all var(--timing-fast) var(--ease-apple);
+    border-radius: var(--radius-md);
+}
+
+.mobileMenuToggle:hover {
+    color: var(--gray-700);
+    background: var(--gray-100);
+}
+
+@media (min-width: 1024px) {
+    .mobileMenuToggle {
+        display: none;
+        /* Hide on desktop */
+    }
+}
+
+/* Mobile Menu */
+.mobileMenu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--white);
+    z-index: var(--z-fixed);
+    animation: fadeIn 0.2s var(--ease-apple);
+    overflow-y: auto;
+}
+
+.mobileNav {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-6);
+    gap: var(--space-2);
+}
+
+.mobileNav a {
+    color: var(--gray-900);
+    font-size: var(--text-base);
+    font-weight: var(--font-regular);
+    text-decoration: none;
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    transition: all var(--timing-fast) var(--ease-apple);
+}
+
+.mobileNav a:hover {
+    background: var(--gray-100);
+}
+
+.mobileCTA {
+    margin-top: var(--space-4);
+    width: 100%;
+}

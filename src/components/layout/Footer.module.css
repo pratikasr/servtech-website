@@ -1,0 +1,158 @@
+.footer {
+    background: var(--gray-900);
+    /* Apple's dark gray, not pure black */
+    color: var(--gray-400);
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-8);
+    margin-top: 0;
+    /* No white space */
+    border-top: 1px solid var(--gray-700);
+    /* Darker, more visible line */
+}
+
+.footerContent {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    /* More generous spacing */
+    margin-bottom: var(--space-12);
+}
+
+@media (min-width: 640px) {
+    .footerContent {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .footerContent {
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+        gap: var(--space-16);
+        /* More space */
+    }
+}
+
+.column h4 {
+    color: var(--white);
+    font-size: var(--text-base);
+    /* Smaller */
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-4);
+}
+
+.column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.column li {
+    margin-bottom: var(--space-3);
+}
+
+.column a {
+    color: var(--gray-500);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    transition: color var(--timing-fast) var(--ease-apple);
+    display: inline-block;
+}
+
+.column a:hover {
+    color: var(--white);
+}
+
+/* Logo */
+.logo {
+    font-size: var(--text-2xl);
+    /* Smaller */
+    font-weight: var(--font-semibold);
+    color: var(--white);
+    margin-bottom: var(--space-3);
+}
+
+.tagline {
+    color: var(--gray-500);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-6);
+}
+
+/* Social Links - No circles */
+.socialLinks {
+    display: flex;
+    gap: var(--space-4);
+}
+
+.socialLinks a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    /* Smaller */
+    height: 32px;
+    color: var(--gray-500);
+    transition: all var(--timing-fast) var(--ease-apple);
+    background: transparent;
+    /* No background */
+    border-radius: 0;
+    /* No circle */
+}
+
+.socialLinks a:hover {
+    color: var(--white);
+    transform: none;
+    /* No translateY */
+}
+
+/* Contact List */
+.contactList li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    color: var(--gray-500);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+}
+
+.contactList svg {
+    flex-shrink: 0;
+    margin-top: var(--space-1);
+    color: var(--gray-600);
+    /* More muted */
+}
+
+/* Bottom Bar */
+.bottomBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--gray-800);
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+}
+
+@media (min-width: 768px) {
+    .bottomBar {
+        flex-direction: row;
+    }
+}
+
+.legalLinks {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.legalLinks a {
+    color: var(--gray-600);
+    text-decoration: none;
+    transition: color var(--timing-fast) var(--ease-apple);
+}
+
+.legalLinks a:hover {
+    color: var(--white);
+}
