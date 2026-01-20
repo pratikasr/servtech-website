@@ -19,10 +19,19 @@
     box-shadow: var(--shadow-sm);
 }
 
+.headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 /* Logo - Simpler without gradient */

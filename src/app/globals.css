@@ -155,6 +155,11 @@ body {
   letter-spacing: var(--tracking-normal);
   color: var(--gray-900);
   background-color: var(--white);
+  min-height: 100vh;
+  position: relative;
+  /* Ensure no residual gradients or shadows */
+  background-image: none !important;
+  box-shadow: none !important;
 }
 
 /* ============================================
