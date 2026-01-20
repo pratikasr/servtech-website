@@ -1,53 +1,63 @@
-/* Industries Page - Premium Uniform Grid */
+/* Industries Page - Premium Uniform Scale */
 .grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: var(--space-6);
     padding-bottom: var(--space-32);
 }
 
-@media (min-width: 768px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--space-8);
-    }
-}
-
-
 /* Card Styles - Premium Glass & Glow */
 .industryCard {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: var(--radius-3xl);
-    /* softer, larger radius */
-    padding: var(--space-8);
+    padding: var(--space-10);
     position: relative;
     overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    /* Apple spring */
+    transition: all 0.4s var(--ease-apple);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+
+    width: 100%;
+    min-height: 280px;
 }
 
-/* Subtle Border Highlight on Hover (No mask warning) */
+/* Tablet: 2 items */
+@media (min-width: 640px) {
+    .industryCard {
+        width: calc(50% - var(--space-6) / 2);
+        /* Adjusted for 2 items with gap */
+    }
+}
+
+/* Desktop: 4 items max per row, centered */
+@media (min-width: 1024px) {
+    .industryCard {
+        width: calc(25% - (var(--space-6) * 3 / 4));
+    }
+
+    /* Reset bento overrides */
+    .industryCard:first-child {
+        background: rgba(255, 255, 255, 0.8);
+        grid-column: auto;
+        /* Reset grid-column */
+    }
+
+    .industryCard:first-child .cardTitle {
+        font-size: var(--text-2xl);
+        /* Reset font size */
+    }
+}
+
+/* Subtle Border Highlight on Hover */
 .industryCard:hover {
-    transform: translateY(-4px) scale(1.005);
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow:
-        0 20px 40px -4px rgba(0, 0, 0, 0.08),
-        0 8px 16px -4px rgba(0, 0, 0, 0.04);
-    border-color: rgba(255, 255, 255, 0.0);
-    /* The pseudo-element does the border work now */
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 /* Animated Gradient Border via Pseudo-element */
@@ -57,22 +67,15 @@
     inset: 0;
     border-radius: var(--radius-3xl);
     padding: 1px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0.05));
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
-    opacity: 0.5;
 }
 
-.industryCard:hover::before {
-    background: linear-gradient(135deg, var(--accent-blue), transparent);
-    opacity: 1;
-}
-
-/* Content Layout */
 .cardContent {
     position: relative;
     z-index: 2;
@@ -85,9 +88,9 @@
 .cardTitle {
     font-size: var(--text-2xl);
     font-weight: var(--font-semibold);
-    letter-spacing: -0.02em;
+    letter-spacing: var(--tracking-tight);
     color: var(--gray-900);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-3);
 }
 
 .cardDescription {
@@ -101,21 +104,21 @@
     color: var(--accent-blue);
     margin-bottom: var(--space-6);
     background: var(--white);
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 4rem;
+    height: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--radius-xl);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-    transition: all var(--timing-base) var(--ease-apple);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s var(--ease-apple);
 }
 
 .industryCard:hover .cardIcon {
     background: var(--accent-blue);
     color: var(--white);
     transform: scale(1.1) rotate(-3deg);
-    box-shadow: 0 10px 20px rgba(0, 113, 227, 0.2);
+    box-shadow: var(--shadow-md);
 }
 
 .cardLink {
@@ -143,18 +146,3 @@
 .industryCard:hover .arrow {
     transform: translateX(4px);
 }
-
-@media (min-width: 768px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: var(--space-8);
-    }
-}
-
-/* Removed Bento Grid Modifiers */
