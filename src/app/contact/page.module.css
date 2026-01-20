@@ -1,0 +1,120 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-20);
+    align-items: start;
+}
+
+.contactInfo h2 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-6);
+    color: var(--gray-900);
+}
+
+.contactInfo>p {
+    font-size: var(--text-lg);
+    color: var(--gray-500);
+    margin-bottom: var(--space-12);
+    line-height: var(--leading-relaxed);
+}
+
+.infoItem {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-6);
+    margin-bottom: var(--space-10);
+}
+
+.iconWrapper {
+    color: var(--accent-blue);
+    background: var(--gray-50);
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+}
+
+.infoContent h4 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-1);
+    color: var(--gray-900);
+}
+
+.infoContent p {
+    color: var(--gray-500);
+    font-size: var(--text-base);
+}
+
+.formWrapper {
+    background-color: var(--white);
+    padding: var(--space-10);
+    border-radius: var(--radius-2xl);
+    border: 1px solid var(--gray-100);
+    box-shadow: var(--shadow-xl);
+}
+
+.formGroup {
+    margin-bottom: var(--space-6);
+}
+
+.label {
+    display: block;
+    margin-bottom: var(--space-3);
+    font-weight: var(--font-medium);
+    color: var(--gray-700);
+    font-size: var(--text-sm);
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: var(--space-4);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    font-family: var(--font-text);
+    font-size: var(--text-base);
+    transition: all var(--timing-fast);
+    background-color: var(--gray-50);
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    background-color: var(--white);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1);
+}
+
+.textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.submitButton {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    border: none;
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-full);
+    font-weight: var(--font-medium);
+    font-size: var(--text-base);
+    cursor: pointer;
+    transition: background-color var(--timing-fast);
+    width: 100%;
+    margin-top: var(--space-4);
+}
+
+.submitButton:hover {
+    background-color: var(--accent-blue-hover);
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
