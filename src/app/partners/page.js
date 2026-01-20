@@ -1,12 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import PageHeader from '@/components/common/PageHeader';
 import { partnersData } from '@/data/partners';
 import styles from './page.module.css';
 
-export default function PartnersPage() {
+function PartnersContent() {
+    const searchParams = useSearchParams();
+    const initialCategory = searchParams.get('category');
     const [activeCategory, setActiveCategory] = useState('All');
+
+    // Sync active category with URL param on load
+    useEffect(() => {
+        if (initialCategory) {
+            // Decoding URI component to handle spaces/ampersands correctly
+            const decodedCategory = decodeURIComponent(initialCategory);
+            setActiveCategory(decodedCategory);
+        }
+    }, [initialCategory]);
 
     // Extract unique categories, sorted alphabetically
     const categories = ['All', ...new Set(partnersData.map(p => p.category))].sort();
@@ -59,5 +71,13 @@ export default function PartnersPage() {
                 </div>
             </section>
         </>
+    );
+}
+
+export default function PartnersPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <PartnersContent />
+        </Suspense>
     );
 }

@@ -72,9 +72,9 @@ export default function IndustriesPage() {
                                     </div>
                                     <h3 className={styles.cardTitle}>{industry.title}</h3>
                                     <p className={styles.cardDescription}>{industry.description}</p>
-                                    <div className={styles.cardLink}>
+                                    <a href={`/partners?category=${encodeURIComponent(industry.title === 'Storage & Data' ? 'Storage' : (industry.title === 'Hardware & Devices' ? 'Hardware' : industry.title))}`} className={styles.cardLink}>
                                         Learn more <span className={styles.arrow}>→</span>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         ))}

@@ -10,23 +10,23 @@ const servicesMenu = [
     {
         category: 'Core Infrastructure',
         items: [
-            { name: 'Networking', href: '/services/networking' },
-            { name: 'Cloud & Infrastructure', href: '/services/cloud-infrastructure' },
-            { name: 'Storage & Data', href: '/services/storage-data' },
-            { name: 'Hardware & Devices', href: '/services/hardware-devices' },
+            { name: 'Networking', href: '/partners?category=Networking' },
+            { name: 'Cloud & Infrastructure', href: '/partners?category=Cloud%20%26%20Infrastructure' },
+            { name: 'Storage & Data', href: '/partners?category=Storage' },
+            { name: 'Hardware & Devices', href: '/partners?category=Hardware' },
         ]
     },
     {
         category: 'Security & Access',
         items: [
-            { name: 'Cybersecurity', href: '/services/cybersecurity' },
-            { name: 'Physical Security', href: '/services/physical-security' },
+            { name: 'Cybersecurity', href: '/partners?category=Cybersecurity' },
+            { name: 'Physical Security', href: '/partners?category=Physical%20Security' },
         ]
     },
     {
         category: 'Business Solutions',
         items: [
-            { name: 'Enterprise Software', href: '/services/enterprise-software' },
+            { name: 'Enterprise Software', href: '/partners?category=Enterprise%20Software' },
             { name: 'Strategic Partners', href: '/partners' },
         ]
     },

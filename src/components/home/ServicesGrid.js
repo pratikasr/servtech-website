@@ -7,43 +7,43 @@ const services = [
         icon: <Shield size={24} />,
         title: 'Cybersecurity',
         description: 'Advanced threat protection, zero-trust architecture, and comprehensive security audits.',
-        href: '/services/cybersecurity',
+        href: '/partners?category=Cybersecurity',
     },
     {
         icon: <Network size={24} />,
         title: 'Networking',
         description: 'High-performance network infrastructure, SD-WAN, and seamless connectivity solutions.',
-        href: '/services/networking',
+        href: '/partners?category=Networking',
     },
     {
         icon: <Cloud size={24} />,
         title: 'Cloud & Infrastructure',
         description: 'Scalable cloud platforms, hybrid infrastructure, and orchestration for modern enterprises.',
-        href: '/services/cloud-infrastructure',
+        href: '/partners?category=Cloud%20%26%20Infrastructure',
     },
     {
         icon: <Database size={24} />,
         title: 'Storage & Data',
         description: 'Resilient storage systems, data protection, and intelligent data management strategies.',
-        href: '/services/storage-data',
+        href: '/partners?category=Storage',
     },
     {
         icon: <Layout size={24} />,
         title: 'Enterprise Software',
         description: 'Business process automation, ERP integration, and custom software solutions.',
-        href: '/services/enterprise-software',
+        href: '/partners?category=Enterprise%20Software',
     },
     {
         icon: <Camera size={24} />,
         title: 'Physical Security',
         description: 'Smart surveillance, access control, and integrated physical security systems.',
-        href: '/services/physical-security',
+        href: '/partners?category=Physical%20Security',
     },
     {
         icon: <Monitor size={24} />,
         title: 'Hardware & Devices',
         description: 'Premium hardware provisioning, IoT devices, and robust endpoint management.',
-        href: '/services/hardware-devices',
+        href: '/partners?category=Hardware',
     }
 ];
 
