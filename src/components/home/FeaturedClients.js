@@ -19,16 +19,25 @@ export default function FeaturedClients() {
                         From startups to enterprises, we partner with forward-thinking organizations
                     </p>
                 </div>
+            </div>
 
-                <div className={styles.grid}>
-                    {clients.map((client, index) => (
-                        <div key={index} className={styles.card}>
-                            <div className={styles.clientName}>{client.name}</div>
-                            <div className={styles.industry}>{client.industry}</div>
-                        </div>
-                    ))}
+            {/* Infinite Marquee */}
+            <div className={styles.marqueeWrapper}>
+                <div className={styles.marqueeContainer}>
+                    <div className={styles.marqueeContent}>
+                        {[...clients, ...clients].map((client, index) => (
+                            <div key={`${client.name}-${index}`} className={styles.card}>
+                                <div className={styles.clientName}>{client.name}</div>
+                                <div className={styles.industry}>{client.industry}</div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
+                <div className={styles.gradientLeft}></div>
+                <div className={styles.gradientRight}></div>
+            </div>
 
+            <div className="container">
                 <div className={styles.stats}>
                     <div className={styles.statItem}>
                         <div className={styles.statValue}>500+</div>

@@ -24,42 +24,53 @@
     line-height: var(--leading-relaxed);
 }
 
-.clientGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-8);
-    /* Increased gap */
-    margin-top: var(--space-12);
-    /* More separation from title */
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-6);
-    /* Increased gap */
+.marqueeWrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: var(--space-8) 0;
     margin-bottom: var(--space-20);
+    background: var(--gray-50);
 }
 
-@media (min-width: 768px) {
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
+.marqueeContainer {
+    display: flex;
+    overflow: hidden;
+}
+
+.marqueeContent {
+    display: flex;
+    gap: var(--space-6);
+    animation: scroll 40s linear infinite;
+    padding-left: var(--space-6);
+}
+
+/* Pause on hover for interaction */
+.marqueeContent:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
     }
-}
 
-@media (min-width: 1024px) {
-    .grid {
-        grid-template-columns: repeat(6, 1fr);
+    100% {
+        transform: translateX(-50%);
     }
 }
 
 .card {
     background: var(--white);
     border: 1px solid var(--gray-200);
-    border-radius: var(--radius-lg);
-    padding: var(--space-8);
-    /* Increased padding */
+    border-radius: var(--radius-xl);
+    padding: var(--space-6) var(--space-10);
     text-align: center;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transition: all var(--timing-fast) var(--ease-apple);
 }
 
@@ -72,9 +83,9 @@
 .clientName {
     font-weight: var(--font-semibold);
     color: var(--gray-900);
-    font-size: var(--text-base);
-    /* Increased from sm */
-    margin-bottom: var(--space-2);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-1);
+    white-space: nowrap;
 }
 
 .industry {
@@ -83,6 +94,27 @@
     text-transform: uppercase;
     letter-spacing: var(--tracking-wide);
     font-weight: var(--font-medium);
+}
+
+/* Gradient Fade Effects */
+.gradientLeft,
+.gradientRight {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.gradientLeft {
+    left: 0;
+    background: linear-gradient(to right, var(--gray-50), transparent);
+}
+
+.gradientRight {
+    right: 0;
+    background: linear-gradient(to left, var(--gray-50), transparent);
 }
 
 /* Stats Row */
