@@ -1,0 +1,39 @@
+/* Premium Scroll Reveal Animations */
+
+.wrapper {
+    transition-property: opacity, transform;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+/* Initial states (before visible) */
+.up {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.down {
+    opacity: 0;
+    transform: translateY(-40px);
+}
+
+.left {
+    opacity: 0;
+    transform: translateX(40px);
+}
+
+.right {
+    opacity: 0;
+    transform: translateX(-40px);
+}
+
+.fade {
+    opacity: 0;
+    transform: none;
+}
+
+/* Visible state */
+.visible {
+    opacity: 1 !important;
+    transform: none !important;
+}

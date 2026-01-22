@@ -1,14 +1,14 @@
+/* Apple-tier Button Styling - Clean and Minimal */
 .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: var(--space-2);
     font-weight: var(--font-medium);
-    /* Changed from semibold */
-    border-radius: var(--radius-lg);
-    transition: all var(--timing-fast) var(--ease-apple);
+    border-radius: var(--radius-full);
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     cursor: pointer;
-    border: 1px solid transparent;
+    border: none;
     text-decoration: none;
     font-family: var(--font-text);
     white-space: nowrap;
@@ -18,51 +18,44 @@
 .button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    transform: none !important;
 }
 
-.button:not(:disabled):hover {
-    transform: var(--hover-lift);
-    /* 1px only */
-}
-
-.button:not(:disabled):active {
-    transform: translateY(0);
-}
-
-/* Variants */
+/* Primary - Apple Blue */
 .primary {
     background: var(--accent-blue);
     color: var(--white);
-    box-shadow: none;
-    /* No shadow by default */
 }
 
 .primary:not(:disabled):hover {
-    background: var(--accent-blue);
+    background: var(--accent-blue-hover);
     color: var(--white);
-    /* Ensure text stays white */
-    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2), 0 4px 12px rgba(0, 113, 227, 0.3);
-    /* Glow effect */
-    transform: none;
-    /* No lift, just glow */
+    filter: brightness(1.05);
 }
 
+.primary:not(:disabled):active {
+    filter: brightness(0.95);
+    transform: scale(0.98);
+}
+
+/* Secondary - Dark */
 .secondary {
     background: var(--gray-900);
     color: var(--white);
-    box-shadow: none;
 }
 
 .secondary:not(:disabled):hover {
     background: var(--gray-800);
-    box-shadow: var(--shadow-sm);
 }
 
+.secondary:not(:disabled):active {
+    transform: scale(0.98);
+}
+
+/* Outline */
 .outline {
     background: transparent;
     color: var(--gray-900);
-    border-color: var(--gray-300);
+    border: 1px solid var(--gray-300);
 }
 
 .outline:not(:disabled):hover {
@@ -70,6 +63,7 @@
     border-color: var(--gray-400);
 }
 
+/* Ghost */
 .ghost {
     background: transparent;
     color: var(--gray-900);
@@ -79,7 +73,7 @@
     background: var(--gray-100);
 }
 
-/* Remove red variant - use primary (blue) only */
+/* Legacy red -> now blue */
 .red {
     background: var(--accent-blue);
     color: var(--white);
@@ -96,17 +90,22 @@
 }
 
 .md {
-    padding: var(--space-3) var(--space-5);
+    padding: var(--space-3) var(--space-6);
     font-size: var(--text-base);
 }
 
 .lg {
-    padding: var(--space-4) var(--space-6);
+    padding: var(--space-4) var(--space-8);
     font-size: var(--text-base);
-    /* Not larger */
 }
 
 .icon {
     display: inline-flex;
     align-items: center;
+    transition: transform 0.2s ease;
+}
+
+/* Subtle arrow movement on hover */
+.button:not(:disabled):hover .icon {
+    transform: translateX(2px);
 }

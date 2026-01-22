@@ -12,23 +12,27 @@ export default function Hero() {
 
     return (
         <section className={styles.hero}>
+            {/* Floating ambient orbs */}
+            <div className={styles.heroOrb} aria-hidden="true" />
+            <div className={styles.heroOrb} aria-hidden="true" />
+
             <div className="container">
                 <div className={styles.heroContent}>
                     <h1 className={styles.title}>
-                        Transform Your Business with Cutting-Edge IT Solutions
+                        Your Trusted IT Service Partner
                     </h1>
 
                     <p className={styles.subtitle}>
-                        System integration and IT consultancy designed to accelerate digital transformation.
-                        From cloud infrastructure to AI-powered analytics.
+                        Partnering with Tech Hat Pvt. Ltd. to deliver excellence in IT Services,
+                        Cybersecurity, and Cloud Infrastructure solutions.
                     </p>
 
                     <div className={styles.ctaGroup}>
                         <Button
                             href="/contact"
-                            variant="primary"   // Changed from "red"
+                            variant="primary"
                             size="lg"
-                            icon={<ArrowRight size={16} />}  // Smaller icon
+                            icon={<ArrowRight size={16} />}
                             iconPosition="right"
                         >
                             Get Started

@@ -1,70 +1,84 @@
 import PageHeader from '@/components/common/PageHeader';
 import {
+    Lightbulb,
+    ArrowRightLeft,
+    Settings,
+    Wrench,
     Code,
-    Smartphone,
-    Database,
+    Wifi,
     Cloud,
     Shield,
-    TrendingUp,
     Server,
-    CreditCard,
+    Database,
     Check
 } from 'lucide-react';
 import styles from './page.module.css';
 
 export const metadata = {
     title: 'Our Services - Servtech',
-    description: 'Explore our wide range of IT solutions including Web Development, AI, Cloud Computing, Cybersecurity, and Digital Marketing.',
+    description: 'Expert IT solutions including IT Consulting, Migration Services, Managed IT, Cloud Infrastructure, Cybersecurity, and Custom Software Development.',
 };
 
 const services = [
     {
-        title: "Web & Custom Development",
-        description: "Robust, scalable, and responsive web solutions tailored to your business needs.",
+        title: "IT Design & Consulting",
+        description: "Tailored IT solutions to optimize your business operations and enhance productivity.",
+        icon: <Lightbulb size={24} />,
+        features: ["IT Strategy & Roadmap", "Technology Assessment", "Digital Transformation", "Business Process Optimization"]
+    },
+    {
+        title: "Migration Services",
+        description: "Seamless transition to new systems with minimal disruption, ensuring data integrity.",
+        icon: <ArrowRightLeft size={24} />,
+        features: ["Cloud Migration", "Data Center Migration", "Exchange & AD Migrations", "Legacy System Modernization"]
+    },
+    {
+        title: "Managed IT Services",
+        description: "Continuous monitoring and management of your IT systems for peak efficiency.",
+        icon: <Settings size={24} />,
+        features: ["24/7 Monitoring & Support", "SLA-Based Service", "Proactive Maintenance", "Help Desk Support"]
+    },
+    {
+        title: "Infrastructure Maintenance",
+        description: "Regular maintenance services to keep your IT infrastructure running smoothly.",
+        icon: <Wrench size={24} />,
+        features: ["Server & Storage Specialist", "Backup & Recovery", "Data Center Operations", "Infrastructure Audits"]
+    },
+    {
+        title: "Custom Software Development",
+        description: "Bespoke software solutions designed to meet your unique business requirements.",
         icon: <Code size={24} />,
-        features: ["Custom Software Development", "E-commerce Platforms", "Enterprise Web Apps", "CMS Development"]
+        features: ["Python, .NET, Node.js", "API Integration", "DevOps & CI/CD", "Enterprise Applications"]
     },
     {
-        title: "Mobile App Development",
-        description: "Native and cross-platform mobile applications for iOS and Android.",
-        icon: <Smartphone size={24} />,
-        features: ["iOS & Android Apps", "React Native / Flutter", "App Maintenance", "UI/UX Design"]
+        title: "Wireless Link Survey",
+        description: "Thorough assessments to ensure optimal wireless connectivity and performance.",
+        icon: <Wifi size={24} />,
+        features: ["Site Survey & Analysis", "Wireless Network Design", "Performance Optimization", "Coverage Assessment"]
     },
     {
-        title: "AI & Big Data",
-        description: "Harness the power of data with advanced analytics and artificial intelligence.",
-        icon: <Database size={24} />,
-        features: ["AI Model Development", "Big Data Consulting", "Business Intelligence", "Predictive Analytics"]
-    },
-    {
-        title: "Cloud & Networking",
-        description: "Secure and scalable cloud infrastructure and networking solutions.",
+        title: "Cloud & Infrastructure",
+        description: "Seamless cloud solutions across various platforms including AWS, Azure, and GCP.",
         icon: <Cloud size={24} />,
-        features: ["Cloud Migration", "Server Management", "Network Architecture", "Storage Solutions"]
+        features: ["Multi-Cloud Deployment", "Server & HPC Setup", "Storage Solutions", "Virtualization (VMware)"]
     },
     {
         title: "Cybersecurity",
         description: "Comprehensive security services to protect your digital assets and infrastructure.",
         icon: <Shield size={24} />,
-        features: ["Data Security", "Application Security", "Managed IT Services", "Compliance Audits"]
+        features: ["VAPT & Security Audits", "EDR & Deception", "Firewall & SD-WAN", "Compliance Management"]
     },
     {
-        title: "Digital Marketing",
-        description: "Strategic marketing solutions to grow your brand and reach your audience.",
-        icon: <TrendingUp size={24} />,
-        features: ["Search Engine Optimization", "Social Media Marketing", "Email Campaigns", "Content Strategy"]
-    },
-    {
-        title: "Enterprise Solutions",
-        description: "Streamline operations with integrated enterprise resource planning systems.",
+        title: "Networking Solutions",
+        description: "High-performance network infrastructure and connectivity solutions.",
         icon: <Server size={24} />,
-        features: ["ERP Implementations", "CRM Solutions", "Workflow Automation", "Legacy Modernization"]
+        features: ["DNAC, ACI, ISE Projects", "SD-WAN Deployment", "Network Architecture", "Routing & Switching"]
     },
     {
-        title: "FinTech Solutions",
-        description: "Secure and efficient payment processing and financial technology.",
-        icon: <CreditCard size={24} />,
-        features: ["Payment Gateway Integration", "Digital Wallets", "Secure Transaction Systems", "Financial Reporting"]
+        title: "Database & Storage",
+        description: "Advanced storage solutions and database management for enterprise needs.",
+        icon: <Database size={24} />,
+        features: ["Database Support", "Storage Planning", "Data Protection", "Backup Solutions"]
     }
 ];
 
@@ -72,8 +86,8 @@ export default function ServicesPage() {
     return (
         <>
             <PageHeader
-                title="Our Services"
-                description="End-to-end technology solutions designed to accelerate your digital growth."
+                title="Our IT Services Portfolio"
+                description="Expert solutions designed to optimize your business operations and enhance productivity."
             />
 
             <section className="section">

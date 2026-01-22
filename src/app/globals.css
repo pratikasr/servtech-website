@@ -165,20 +165,36 @@ body {
   background-color: var(--white);
   min-height: 100vh;
   position: relative;
-  /* Ensure no residual gradients or shadows */
+  /* Remove any gradients or glows */
   background-image: none !important;
   box-shadow: none !important;
 }
 
-/* NUKE ALL GLOWS */
+/* AGGRESSIVELY REMOVE ALL GLOWS AND VIGNETTES */
 body::before,
 body::after,
 html::before,
-html::after {
+html::after,
+#__next::before,
+#__next::after,
+main::before,
+main::after {
   display: none !important;
   content: none !important;
   background: none !important;
   box-shadow: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Remove any viewport-edge effects */
+html,
+body,
+#__next,
+main {
+  box-shadow: none !important;
+  outline: none !important;
+  border: none !important;
 }
 
 /* ============================================

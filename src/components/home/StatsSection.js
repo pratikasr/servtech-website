@@ -1,10 +1,13 @@
+'use client';
+
+import CountUp from '../common/CountUp';
 import styles from './StatsSection.module.css';
 
 const stats = [
-    { value: '4.9', suffix: '★', label: 'Client Rating' },
-    { value: '150', suffix: '+', label: 'Happy Clients' },
-    { value: '10', suffix: '+', label: 'Years Experience' },
-    { value: '24', suffix: '/7', label: 'Support Available' }
+    { value: 700, suffix: '+', label: 'Deployments Completed', isNumeric: true },
+    { value: 50, suffix: '+', label: 'Enterprise Clients', isNumeric: true },
+    { value: 24, suffix: '/7', label: 'Monitoring & Support', isNumeric: true },
+    { value: null, display: 'Mumbai', label: 'Based HQ', isNumeric: false }
 ];
 
 export default function StatsSection() {
@@ -16,10 +19,20 @@ export default function StatsSection() {
                         <div
                             key={stat.label}
                             className={styles.statCard}
-                            style={{ animationDelay: `${index * 0.1}s` }}
+                            style={{ animationDelay: `${index * 0.15}s` }}
                         >
                             <div className={styles.value}>
-                                {stat.value}<span className={styles.suffix}>{stat.suffix}</span>
+                                {stat.isNumeric ? (
+                                    <>
+                                        <CountUp
+                                            end={stat.value}
+                                            duration={2000 + (index * 200)}
+                                        />
+                                        <span className={styles.suffix}>{stat.suffix}</span>
+                                    </>
+                                ) : (
+                                    stat.display
+                                )}
                             </div>
                             <div className={styles.label}>{stat.label}</div>
                         </div>

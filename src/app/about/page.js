@@ -1,90 +1,97 @@
 import PageHeader from '@/components/common/PageHeader';
+import Link from 'next/link';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import styles from './page.module.css';
 
 export const metadata = {
     title: 'About Us - Servtech',
-    description: 'Learn about Servtech (formerly Kritech Technologies), a Mumbai-based IT solutions provider certified under ISO, NASSCOM, and more.',
+    description: 'Learn about Servtech, a Mumbai-based IT solutions provider partnering with Tech Hat Pvt. Ltd.',
 };
+
+const highlights = [
+    '700+ successful deployments',
+    '50+ enterprise clients',
+    '24/7 monitoring & support',
+    '15+ years of experience'
+];
+
+const expertise = [
+    { title: 'Cybersecurity', desc: 'Zero-trust, SOC, threat protection' },
+    { title: 'Cloud & Infra', desc: 'AWS, Azure, hybrid solutions' },
+    { title: 'Networking', desc: 'SD-WAN, enterprise connectivity' },
+    { title: 'Managed Services', desc: 'NOC, remote monitoring, support' }
+];
+
+const certifications = [
+    'Cisco CCNA', 'Fortinet NSE', 'AWS Certified',
+    'Azure Admin', 'VMware VCP', 'RHCSA'
+];
 
 export default function AboutPage() {
     return (
         <>
             <PageHeader
                 title="About Servtech"
-                description="Empowering businesses with cutting-edge technology solutions since our inception."
+                description="Your trusted IT services partner since 2008"
             />
 
-            <section className="section">
+            {/* Main Content - Single Flow */}
+            <section className={styles.mainSection}>
                 <div className="container">
-                    <div className={styles.grid}>
-                        <div className={styles.content}>
-                            <h2>We Build the Future.</h2>
-                            <p>
-                                Servtech (formerly Kritech Technologies) is a premier IT solution company based in Mumbai, India.
-                                We specialize in providing comprehensive hardware and software solutions that drive business transformation.
+                    <div className={styles.content}>
+                        {/* Story */}
+                        <div className={styles.storyBlock}>
+                            <h2>Who We Are</h2>
+                            <p className={styles.lead}>
+                                Servtech (formerly Kritech Technologies) is a Mumbai-based IT solutions
+                                company partnering with Tech Hat Pvt. Ltd. to deliver enterprise-grade
+                                technology services.
                             </p>
                             <p>
-                                Our expertise spans across Web & App Development, Artificial Intelligence, Big Data Analytics,
-                                Cloud Computing, and Enterprise Security. We are committed to delivering excellence and are proud to be
-                                certified under:
+                                We bridge the gap between complex technology and business needs—providing
+                                scalable, secure, and innovative solutions with a focus on uptime,
+                                security, and compliance.
                             </p>
 
-                            <div className={styles.certifications}>
-                                <span className={styles.badge}>ISO Certified</span>
-                                <span className={styles.badge}>NASSCOM Member</span>
-                                <span className={styles.badge}>FICCI</span>
-                                <span className={styles.badge}>CII</span>
-                                <span className={styles.badge}>WICCI</span>
+                            <ul className={styles.highlights}>
+                                {highlights.map((item) => (
+                                    <li key={item}>
+                                        <CheckCircle2 size={18} />
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Expertise */}
+                        <div className={styles.expertiseBlock}>
+                            <h3>Our Expertise</h3>
+                            <div className={styles.expertiseGrid}>
+                                {expertise.map((item) => (
+                                    <div key={item.title} className={styles.expertiseItem}>
+                                        <h4>{item.title}</h4>
+                                        <p>{item.desc}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
 
-                        <div className={styles.imagePlaceholder}>
-                            <div style={{
-                                width: '100%',
-                                height: '500px',
-                                borderRadius: 'var(--radius-2xl)',
-                                background: 'linear-gradient(135deg, var(--gray-100) 0%, var(--gray-50) 100%)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                color: 'var(--gray-300)'
-                            }}>
-                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                                    <circle cx="8.5" cy="8.5" r="1.5" />
-                                    <polyline points="21 15 16 10 5 21" />
-                                </svg>
+                        {/* Certifications */}
+                        <div className={styles.certBlock}>
+                            <h3>Certifications</h3>
+                            <div className={styles.certList}>
+                                {certifications.map((cert) => (
+                                    <span key={cert} className={styles.certBadge}>{cert}</span>
+                                ))}
                             </div>
                         </div>
-                    </div>
 
-                    <div className={styles.missionSection}>
-                        <h2>Our Mission</h2>
-                        <p>
-                            "To bridge the gap between complex technology and business needs, providing scalable, secure, and innovative solutions."
-                        </p>
-                    </div>
-
-                    <div className={styles.statsSection}>
-                        <div className="container">
-                            <div className={styles.statsGrid}>
-                                <div className={styles.statItem}>
-                                    <h3>100+</h3>
-                                    <p>Projects Delivered</p>
-                                </div>
-                                <div className={styles.statItem}>
-                                    <h3>50+</h3>
-                                    <p>Enterprise Clients</p>
-                                </div>
-                                <div className={styles.statItem}>
-                                    <h3>24/7</h3>
-                                    <p>Support & Monitoring</p>
-                                </div>
-                                <div className={styles.statItem}>
-                                    <h3>Mumbai</h3>
-                                    <p>Based HQ</p>
-                                </div>
-                            </div>
+                        {/* CTA */}
+                        <div className={styles.ctaBlock}>
+                            <p>Ready to work with us?</p>
+                            <Link href="/contact" className={styles.ctaLink}>
+                                Get in Touch <ArrowRight size={16} />
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -92,4 +99,3 @@ export default function AboutPage() {
         </>
     );
 }
-

@@ -1,27 +1,60 @@
+/* Premium Page Header - Apple-tier styling */
 .pageHeader {
-    padding-top: calc(var(--space-24) + var(--space-8));
-    padding-bottom: var(--space-16);
-    background-color: var(--gray-50);
-    text-align: center;
     position: relative;
+    padding-top: calc(var(--space-32) + 60px);
+    padding-bottom: var(--space-20);
+    text-align: center;
     overflow: hidden;
+    background: var(--white);
+}
+
+/* Mesh gradient background */
+.pageHeader::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 113, 227, 0.08), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 50%, rgba(0, 113, 227, 0.04), transparent),
+        radial-gradient(ellipse 50% 30% at 0% 80%, rgba(0, 113, 227, 0.03), transparent);
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
 }
 
 .title {
-    font-size: var(--text-5xl);
-    /* Massive impactful title */
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: var(--font-semibold);
     color: var(--gray-900);
     margin-bottom: var(--space-4);
-    line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-tighter);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .description {
-    max-width: 48rem;
-    margin: 0 auto;
-    font-size: var(--text-xl);
-    /* Larger description */
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
     color: var(--gray-500);
-    line-height: var(--leading-relaxed);
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

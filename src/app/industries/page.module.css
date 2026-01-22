@@ -1,148 +1,139 @@
-/* Industries Page - Premium Uniform Scale */
-.grid {
+/* Industries Page - Clean Single-Flow Layout (matching About page) */
+
+.mainSection {
+    padding: var(--space-16) 0 var(--space-24);
+}
+
+
+
+.intro {
+    font-size: var(--text-lg);
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: var(--space-12);
+}
+
+/* Industries Block */
+.industriesBlock {
+    margin-bottom: var(--space-12);
+}
+
+.industriesBlock h2 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-6);
+}
+
+.industriesGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+    .industriesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .industriesGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.industryItem {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-5);
+    background: var(--gray-50);
+    border-radius: var(--radius-xl);
+}
+
+.industryIcon {
+    color: var(--accent-blue);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.industryItem h4 {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-1);
+}
+
+.industryItem p {
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+    line-height: 1.5;
+}
+
+/* Services Block */
+.servicesBlock {
+    margin-bottom: var(--space-12);
+}
+
+.servicesBlock h2 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-4);
+}
+
+.servicesList {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--space-6);
-    padding-bottom: var(--space-32);
+    gap: var(--space-2);
 }
 
-/* Card Styles - Premium Glass & Glow */
-.industryCard {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: var(--radius-3xl);
-    padding: var(--space-10);
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s var(--ease-apple);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-
-    width: 100%;
-    min-height: 280px;
+.serviceBadge {
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    color: var(--gray-600);
+    background: var(--gray-100);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
 }
 
-/* Tablet: 2 items */
-@media (min-width: 640px) {
-    .industryCard {
-        width: calc(50% - var(--space-6) / 2);
-        /* Adjusted for 2 items with gap */
-    }
-}
-
-/* Desktop: 4 items max per row, centered */
-@media (min-width: 1024px) {
-    .industryCard {
-        width: calc(25% - (var(--space-6) * 3 / 4));
-    }
-
-    /* Reset bento overrides */
-    .industryCard:first-child {
-        background: rgba(255, 255, 255, 0.8);
-        grid-column: auto;
-        /* Reset grid-column */
-    }
-
-    .industryCard:first-child .cardTitle {
-        font-size: var(--text-2xl);
-        /* Reset font size */
-    }
-}
-
-/* Subtle Border Highlight on Hover */
-.industryCard:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-/* Animated Gradient Border via Pseudo-element */
-.industryCard::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius-3xl);
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0.05));
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-}
-
-.cardContent {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Typography Scale */
-.cardTitle {
-    font-size: var(--text-2xl);
-    font-weight: var(--font-semibold);
-    letter-spacing: var(--tracking-tight);
-    color: var(--gray-900);
-    margin-bottom: var(--space-3);
-}
-
-.cardDescription {
-    color: var(--gray-500);
-    line-height: var(--leading-relaxed);
-    margin-bottom: var(--space-6);
-    font-size: var(--text-base);
-}
-
-.cardIcon {
-    color: var(--accent-blue);
-    margin-bottom: var(--space-6);
-    background: var(--white);
-    width: 4rem;
-    height: 4rem;
+/* CTA Block */
+.ctaBlock {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: var(--radius-2xl);
-    box-shadow: var(--shadow-sm);
-    transition: all 0.4s var(--ease-apple);
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-6) var(--space-8);
+    background: var(--gray-900);
+    border-radius: var(--radius-xl);
 }
 
-.industryCard:hover .cardIcon {
-    background: var(--accent-blue);
-    color: var(--white);
-    transform: scale(1.1) rotate(-3deg);
-    box-shadow: var(--shadow-md);
+@media (max-width: 640px) {
+    .ctaBlock {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
-.cardLink {
-    margin-top: auto;
+.ctaBlock p {
+    font-size: var(--text-base);
     font-weight: var(--font-medium);
-    color: var(--accent-blue);
-    font-size: var(--text-sm);
-    display: flex;
+    color: var(--white);
+    margin: 0;
+}
+
+.ctaLink {
+    display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all var(--timing-base) var(--ease-apple);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
 }
 
-.industryCard:hover .cardLink {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.arrow {
-    transition: transform var(--timing-fast) var(--ease-apple);
-}
-
-.industryCard:hover .arrow {
-    transform: translateX(4px);
+.ctaLink:hover {
+    opacity: 0.8;
 }

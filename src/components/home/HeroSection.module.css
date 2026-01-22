@@ -1,108 +1,136 @@
+/* Premium Hero Section - Apple-tier design */
 .hero {
     position: relative;
-    min-height: 90vh;
-    /* Dominant height */
+    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding-top: calc(var(--space-32) + 60px);
-    /* Clear header + breathing room */
-    padding-bottom: var(--space-24);
-    background-color: var(--white) !important;
-    /* Force Pure white */
+    padding-top: calc(var(--space-24) + 60px);
+    padding-bottom: var(--space-20);
+    background: var(--white);
 }
 
-/* 
-   Eye Bleach Removal: 
-   REMOVED .heroBackground and its pseudo-elements (the blobs).
-   Replaced with a subtle, structured grid or pure white.
-*/
+/* Subtle mesh gradient background */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 113, 227, 0.08), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 50%, rgba(0, 113, 227, 0.04), transparent),
+        radial-gradient(ellipse 50% 30% at 0% 80%, rgba(0, 113, 227, 0.03), transparent);
+    pointer-events: none;
+}
+
+/* Floating orb - subtle ambient element */
+.heroOrb {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 113, 227, 0.06) 0%, transparent 70%);
+    filter: blur(60px);
+    animation: orbFloat 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.heroOrb:nth-child(1) {
+    top: -20%;
+    right: -10%;
+}
+
+.heroOrb:nth-child(2) {
+    bottom: -30%;
+    left: -15%;
+    width: 500px;
+    height: 500px;
+    animation-delay: -10s;
+    background: radial-gradient(circle, rgba(0, 113, 227, 0.04) 0%, transparent 70%);
+}
+
+@keyframes orbFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(20px, -20px) scale(1.02);
+    }
+
+    50% {
+        transform: translate(-10px, 10px) scale(0.98);
+    }
+
+    75% {
+        transform: translate(15px, 15px) scale(1.01);
+    }
+}
 
 .heroContent {
     position: relative;
     text-align: center;
-    max-width: 72rem;
-    /* Wide to accommodate large text */
+    max-width: 56rem;
     margin: 0 auto;
-    padding: var(--space-12) 0;
+    padding: var(--space-8) var(--space-6);
     z-index: 2;
 }
 
 .title {
-    font-size: var(--text-6xl);
-    /* Stark, Massive */
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: var(--font-semibold);
     color: var(--gray-900);
-    margin-bottom: var(--space-8);
-    line-height: var(--leading-none);
-    /* Tightest leading */
-    letter-spacing: var(--tracking-tighter);
+    margin-bottom: var(--space-6);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
     opacity: 0;
-    animation: fadeUp 1s var(--ease-out-expo) forwards;
-    /* Custom premium easing */
-}
-
-@media (max-width: 768px) {
-    .title {
-        font-size: var(--text-4xl);
-        line-height: var(--leading-tight);
-    }
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .subtitle {
-    font-size: var(--text-2xl);
-    font-weight: var(--font-medium);
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: var(--font-regular);
     color: var(--gray-500);
-    /* Stark contrast */
-    margin-bottom: var(--space-12);
-    line-height: var(--leading-relaxed);
-    max-width: 42rem;
+    margin-bottom: var(--space-10);
+    line-height: 1.6;
+    max-width: 36rem;
     margin-left: auto;
     margin-right: auto;
     opacity: 0;
-    animation: fadeUp 1s var(--ease-out-expo) 0.2s forwards;
-    /* Staggered */
-}
-
-@media (max-width: 768px) {
-    .subtitle {
-        font-size: var(--text-lg);
-    }
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
 }
 
 .ctaGroup {
     display: flex;
-    gap: var(--space-5);
+    gap: var(--space-4);
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     opacity: 0;
-    animation: fadeUp 1s var(--ease-out-expo) 0.4s forwards;
-    /* Staggered */
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
 }
 
-/* Secondary CTA - Hyper-minimal */
 .secondaryCta {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
     font-weight: var(--font-medium);
     color: var(--accent-blue);
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: var(--space-3) var(--space-5);
-    transition: all var(--timing-fast) var(--ease-apple);
+    padding: var(--space-3) var(--space-4);
+    transition: opacity 0.2s ease;
 }
 
 .secondaryCta:hover {
-    color: var(--accent-blue-hover);
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 @keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(24px);
     }
 
     to {
